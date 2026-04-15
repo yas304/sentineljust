@@ -366,14 +366,50 @@
             var appContainer = document.getElementById('app-container');
             if (appContainer) appContainer.classList.add('hidden');
             
-            // Show landing page
-            var landingPage = document.getElementById('landing');
+            // Show landing page (try both possible IDs)
+            var landingPage = document.getElementById('landing-page') || document.getElementById('landing');
             if (landingPage) landingPage.classList.remove('hidden');
             
             // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
             showToast('Viewing homepage', 'info');
+        }
+        
+        // Go to dashboard from landing page
+        function goToDashboard() {
+            if (currentUser) {
+                // User is logged in, show dashboard
+                var landingPage = document.getElementById('landing-page') || document.getElementById('landing');
+                if (landingPage) landingPage.classList.add('hidden');
+                
+                var appContainer = document.getElementById('app-container');
+                if (appContainer) appContainer.classList.remove('hidden');
+                
+                switchView('dashboard');
+                showToast('Welcome to your dashboard!', 'success');
+            } else {
+                // Not logged in, show auth modal
+                showAuthModal();
+            }
+        }
+        
+        // Scroll to features section
+        function scrollToFeatures() {
+            var features = document.getElementById('features') || document.querySelector('.features-section');
+            if (features) {
+                features.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                showToast('Features section coming soon!', 'info');
+            }
+        }
+        
+        // Scroll to any section
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
         
         // Toast notification system
@@ -1564,13 +1600,13 @@
                     <span>Sentinel Core</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#features" class="nav-link">Features</a>
-                    <a href="#how-it-works" class="nav-link">How It Works</a>
-                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#features" class="nav-link" onclick="scrollToSection('features'); return false;">Features</a>
+                    <a href="#how-it-works" class="nav-link" onclick="scrollToSection('how-it-works'); return false;">How It Works</a>
+                    <a href="#pricing" class="nav-link" onclick="scrollToSection('pricing'); return false;">Pricing</a>
                 </div>
                 <div class="nav-actions">
                     <button class="btn-ghost" id="nav-login" onclick="showAuthModal('login')">Sign In</button>
-                    <button class="btn-primary" id="nav-signup" onclick="showAuthModal('signup')">Get Started</button>
+                    <button class="btn-primary" id="nav-signup" onclick="goToDashboard()">Get Started</button>
                 </div>
             </div>
         </nav>
@@ -1604,18 +1640,18 @@
                 </p>
                 
                 <div class="hero-cta">
-                    <button class="btn-primary btn-large" id="hero-cta" onclick="showAuthModal('signup')">
-                        <span>Start Free Trial</span>
+                    <button class="btn-primary btn-large" id="hero-cta" onclick="goToDashboard()">
+                        <span>Start Analyzing</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </button>
-                    <button class="btn-ghost btn-large" id="hero-demo">
+                    <button class="btn-ghost btn-large" id="hero-demo" onclick="scrollToFeatures()">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <polygon points="10,8 16,12 10,16" fill="currentColor"/>
                         </svg>
-                        <span>Watch Demo</span>
+                        <span>See Features</span>
                     </button>
                 </div>
                 
