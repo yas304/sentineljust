@@ -1304,23 +1304,32 @@
             var list = document.getElementById('improvements-list');
             if (!list) return;
             
+            // Get improvements from the result (top-level array from backend)
+            var improvements = result.improvements || [];
+            
+            // Also gather suggestions from clauses
             var clauses = result.clauses || [];
-            var improvements = clauses.filter(function(c) { return c.suggested_revision || c.recommendation; })
-                .slice(0, 10)
-                .map(function(c, i) {
-                    return {
-                        num: i + 1,
-                        title: (c.type || 'Clause').replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); }),
-                        text: c.suggested_revision || c.recommendation || ''
-                    };
+            var clauseSuggestions = clauses
+                .filter(function(c) { return c.recommendation && c.recommendation.length > 10; })
+                .slice(0, 5)
+                .map(function(c) {
+                    return c.type.replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); }) + ': ' + c.recommendation;
                 });
             
-            list.innerHTML = improvements.map(function(imp) {
+            // Combine both sources
+            var allImprovements = improvements.concat(clauseSuggestions);
+            
+            // Remove duplicates and limit
+            var uniqueImprovements = allImprovements.filter(function(item, index, self) {
+                return self.indexOf(item) === index;
+            }).slice(0, 10);
+            
+            list.innerHTML = uniqueImprovements.map(function(imp, i) {
                 return '<div class="improvement-item">' +
-                    '<span class="improvement-number">' + imp.num + '</span>' +
-                    '<div class="improvement-content"><h5>' + imp.title + '</h5><p>' + imp.text + '</p></div>' +
+                    '<span class="improvement-number">' + (i + 1) + '</span>' +
+                    '<div class="improvement-content"><p>' + imp + '</p></div>' +
                 '</div>';
-            }).join('') || '<p style="color: var(--text-muted); text-align: center;">No specific improvements suggested.</p>';
+            }).join('') || '<p style="color: var(--text-muted); text-align: center;">No specific improvements suggested. The contract appears to be well-structured.</p>';
         }
         
         // Populate comparison selector
