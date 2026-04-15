@@ -27,9 +27,9 @@ RUN python -m spacy download en_core_web_sm
 # Copy application code
 COPY app/ ./app/
 
-# Copy startup script
+# Copy startup script and fix line endings
 COPY start.sh .
-RUN chmod +x start.sh
+RUN sed -i 's/\r$//' start.sh && chmod +x start.sh
 
 # Create necessary directories
 RUN mkdir -p /app/uploads /app/cache /app/data
