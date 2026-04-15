@@ -60,8 +60,8 @@
     <script>
         // API Configuration - Change this to your backend URL
         // For local development: '' (empty string uses relative URLs)
-        // For Vercel with Railway backend: 'https://your-railway-app.railway.app'
-        var API_BASE_URL = window.location.hostname === 'localhost' ? '' : '';
+        // For production: Render.com backend URL
+        var API_BASE_URL = window.location.hostname === 'localhost' ? '' : 'https://sentinel-core-backend.onrender.com';
         
         // Animate progress bar with CSS
         var progressBar = document.querySelector('.preloader-progress');
