@@ -409,11 +409,22 @@
                 });
                 
                 if (!uploadResponse.ok) {
-                    var error = await uploadResponse.json();
-                    throw new Error(error.detail || 'Upload failed');
+                    var errorText = await uploadResponse.text();
+                    try {
+                        var error = JSON.parse(errorText);
+                        throw new Error(error.detail || 'Upload failed');
+                    } catch (e) {
+                        throw new Error('Upload failed: ' + errorText.substring(0, 100));
+                    }
                 }
                 
-                var uploadResult = await uploadResponse.json();
+                var uploadText = await uploadResponse.text();
+                var uploadResult;
+                try {
+                    uploadResult = JSON.parse(uploadText);
+                } catch (e) {
+                    throw new Error('Invalid response from server: ' + uploadText.substring(0, 100));
+                }
                 var documentId = uploadResult.document_id;
                 
                 currentProgress = 30;
@@ -455,11 +466,22 @@
                 if (progressInterval) clearInterval(progressInterval);
                 
                 if (!analysisResponse.ok) {
-                    var error = await analysisResponse.json();
-                    throw new Error(error.detail || 'Analysis failed');
+                    var errorText = await analysisResponse.text();
+                    try {
+                        var error = JSON.parse(errorText);
+                        throw new Error(error.detail || 'Analysis failed');
+                    } catch (e) {
+                        throw new Error('Analysis failed: ' + errorText.substring(0, 100));
+                    }
                 }
                 
-                var analysisResult = await analysisResponse.json();
+                var analysisText = await analysisResponse.text();
+                var analysisResult;
+                try {
+                    analysisResult = JSON.parse(analysisText);
+                } catch (e) {
+                    throw new Error('Invalid analysis response: ' + analysisText.substring(0, 100));
+                }
                 
                 // Mark all steps complete
                 setLoadingStep('complete');
