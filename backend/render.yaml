@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sentinel-core-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements-railway.txt && python -m spacy download en_core_web_sm
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DEBUG
+        value: false
+      - key: PYTHON_VERSION
+        value: 3.12.0
+    healthCheckPath: /api/v1/health
