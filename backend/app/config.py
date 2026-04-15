@@ -21,9 +21,9 @@ class Settings(BaseSettings):
     # API Keys
     GEMINI_API_KEY: str
     
-    # Supabase Configuration
-    SUPABASE_URL: str
-    SUPABASE_ANON_KEY: str
+    # Supabase Configuration (optional - used by frontend)
+    SUPABASE_URL: Optional[str] = None
+    SUPABASE_ANON_KEY: Optional[str] = None
     
     # File Upload Settings
     MAX_FILE_SIZE_MB: int = 50
