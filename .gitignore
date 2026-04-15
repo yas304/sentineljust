@@ -1,0 +1,51 @@
+# Vercel
+.vercel
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+backend/venv/
+ENV/
+env/
+.venv/
+
+# Environment variables
+.env
+backend/.env
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache
+cache/
+backend/cache/
+
+# Uploads
+uploads/
+backend/uploads/
+
+# Data
+data/
+backend/data/
+
+# Node modules
+node_modules/
+
+# Railway
+.railway/

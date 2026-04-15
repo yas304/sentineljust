@@ -1,0 +1,36 @@
+# Vercel Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+backend/venv/
+.env
+backend/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+cache/
+backend/cache/
+uploads/
+backend/uploads/
+
+# Large files
+*.pdf
+*.csv
+
+# Build
+node_modules/
+.next/

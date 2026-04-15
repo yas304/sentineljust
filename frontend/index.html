@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel Core | AI Contract Intelligence</title>
+    <meta name="description" content="Production-grade AI-powered contract analysis and negotiation platform">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Chart.js for analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css?v=17">
+</head>
+<body>
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="30" r="28" stroke="url(#preloader-gradient)" stroke-width="2"/>
+                    <path d="M30 10 L45 20 L45 40 L30 50 L15 40 L15 20 Z" stroke="url(#preloader-gradient)" stroke-width="2" fill="none"/>
+                    <circle cx="30" cy="30" r="8" fill="url(#preloader-gradient)"/>
+                    <defs>
+                        <linearGradient id="preloader-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#60A5FA"/>
+                            <stop offset="100%" stop-color="#3B82F6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="preloader-text">SENTINEL CORE</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Inline preloader dismiss script -->
+    <script>
+        // API Configuration - Change this to your backend URL
+        // For local development: '' (empty string uses relative URLs)
+        // For Vercel with Railway backend: 'https://your-railway-app.railway.app'
+        var API_BASE_URL = window.location.hostname === 'localhost' ? '' : '';
+        
+        // Animate progress bar with CSS
+        var progressBar = document.querySelector('.preloader-progress');
+        if (progressBar) {
+            progressBar.style.transition = 'width 2s ease-in-out';
+            progressBar.style.width = '100%';
+        }
+        
+        // Dismiss preloader after animation
+        setTimeout(function() {
+            var preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.transition = 'opacity 0.5s ease';
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        }, 2500);
+        
+        // Auth state
+        var authMode = 'login';
+        var supabaseClient = null;
+        var currentUser = null;
+        
+        // Initialize Supabase when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            var sessionRestored = false;
+            
+            // Check localStorage for stored user first (for demo mode)
+            try {
+                var storedUser = localStorage.getItem('sentinel_user');
+                if (storedUser) {
+                    var user = JSON.parse(storedUser);
+                    if (user && user.email) {
+                        console.log('Stored user found, auto-logging in');
+                        handleAuthSuccess(user);
+                        sessionRestored = true;
+                    }
+                }
+            } catch (e) {
+                console.warn('Stored user check failed:', e);
+            }
+            
+            try {
+                if (window.supabase) {
+                    supabaseClient = window.supabase.createClient(
+                        'https://kifkkdawmitxivosuncs.supabase.co',
+                        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtpZmtrZGF3bWl0eGl2b3N1bmNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjE0NDgsImV4cCI6MjA5MTgzNzQ0OH0.9ajeZpiUmf4-UEq7E90AQW3M-Tk0kzvH8dzZJIAu-5U'
+                    );
+                    console.log('Supabase initialized');
+                    
+                    // Check for existing Supabase session (if not already restored from localStorage)
+                    if (!sessionRestored) {
+                        supabaseClient.auth.getSession().then(function(response) {
+                            if (response.data.session && response.data.session.user) {
+                                console.log('Supabase session found, auto-logging in');
+                                handleAuthSuccess(response.data.session.user);
+                            }
+                        }).catch(function(err) {
+                            console.warn('Session check failed:', err);
+                        });
+                    }
+                    
+                    // Listen for auth state changes
+                    supabaseClient.auth.onAuthStateChange(function(event, session) {
+                        console.log('Auth state changed:', event);
+                        if (event === 'SIGNED_IN' && session && session.user) {
+                            handleAuthSuccess(session.user);
+                        } else if (event === 'SIGNED_OUT') {
+                            currentUser = null;
+                            try { localStorage.removeItem('sentinel_user'); } catch(e) {}
+                            var landing = document.getElementById('landing-page');
+                            var app = document.getElementById('app-container');
+                            if (landing) landing.classList.remove('hidden');
+                            if (app) app.classList.add('hidden');
+                        }
+                    });
+                }
+            } catch (e) {
+                console.warn('Supabase init failed:', e);
+            }
+            
+            // Setup form handler
+            var authForm = document.getElementById('auth-form');
+            if (authForm) {
+                authForm.onsubmit = function(e) {
+                    e.preventDefault();
+                    handleAuthSubmit();
+                };
+            }
+        });
+        
+        function showAuthModal(mode) {
+            console.log('showAuthModal called:', mode);
+            authMode = mode;
+            updateAuthUI();
+            var modal = document.getElementById('auth-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.style.display = 'flex';
+                modal.style.opacity = '1';
+                modal.style.visibility = 'visible';
+            }
+        }
+        
+        function hideAuthModal() {
+            var modal = document.getElementById('auth-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+                var form = document.getElementById('auth-form');
+                if (form) form.reset();
+            }
+        }
+        
+        function toggleAuthMode() {
+            authMode = authMode === 'login' ? 'signup' : 'login';
+            updateAuthUI();
+        }
+        
+        function updateAuthUI() {
+            var title = document.getElementById('auth-title');
+            var subtitle = document.getElementById('auth-subtitle');
+            var submitBtn = document.getElementById('auth-submit');
+            var toggleText = document.getElementById('auth-toggle-text');
+            var toggle = document.getElementById('auth-toggle');
+            
+            if (authMode === 'login') {
+                if (title) title.textContent = 'Welcome Back';
+                if (subtitle) subtitle.textContent = 'Sign in to your account';
+                if (submitBtn) submitBtn.querySelector('span').textContent = 'Sign In';
+                if (toggleText) toggleText.textContent = "Don't have an account?";
+                if (toggle) toggle.textContent = 'Sign Up';
+            } else {
+                if (title) title.textContent = 'Create Account';
+                if (subtitle) subtitle.textContent = 'Start your free trial today';
+                if (submitBtn) submitBtn.querySelector('span').textContent = 'Sign Up';
+                if (toggleText) toggleText.textContent = 'Already have an account?';
+                if (toggle) toggle.textContent = 'Sign In';
+            }
+        }
+        
+        async function handleAuthSubmit() {
+            var email = document.getElementById('auth-email').value;
+            var password = document.getElementById('auth-password').value;
+            
+            if (!email || !password) {
+                showToast('Please enter email and password', 'error');
+                return;
+            }
+            
+            // Demo mode - bypass if Supabase not available
+            if (!supabaseClient) {
+                console.log('Demo mode: bypassing auth');
+                handleAuthSuccess({ email: email, id: 'demo-user' });
+                return;
+            }
+            
+            try {
+                var result;
+                if (authMode === 'login') {
+                    result = await supabaseClient.auth.signInWithPassword({ email: email, password: password });
+                } else {
+                    result = await supabaseClient.auth.signUp({ email: email, password: password });
+                }
+                
+                if (result.error) {
+                    showToast(result.error.message, 'error');
+                    return;
+                }
+                
+                if (result.data && result.data.user) {
+                    handleAuthSuccess(result.data.user);
+                } else if (authMode === 'signup') {
+                    showToast('Check your email to confirm signup!', 'success');
+                    hideAuthModal();
+                }
+            } catch (error) {
+                showToast(error.message || 'Authentication failed', 'error');
+            }
+        }
+        
+        async function handleGoogleAuth() {
+            if (!supabaseClient) {
+                showToast('Google auth requires Supabase connection', 'warning');
+                return;
+            }
+            
+            try {
+                await supabaseClient.auth.signInWithOAuth({
+                    provider: 'google',
+                    options: { redirectTo: window.location.origin }
+                });
+            } catch (error) {
+                showToast('Google auth failed: ' + error.message, 'error');
+            }
+        }
+        
+        function handleAuthSuccess(user) {
+            currentUser = user;
+            hideAuthModal();
+            
+            // Store user in localStorage for session persistence (demo mode)
+            try {
+                localStorage.setItem('sentinel_user', JSON.stringify({
+                    email: user.email,
+                    id: user.id || 'demo-user'
+                }));
+            } catch (e) {}
+            
+            // Show app, hide landing
+            var landing = document.getElementById('landing-page');
+            var app = document.getElementById('app-container');
+            if (landing) landing.classList.add('hidden');
+            if (app) app.classList.remove('hidden');
+            
+            // Update user info
+            var avatar = document.getElementById('user-avatar');
+            var userName = document.getElementById('dropdown-user-name');
+            var userEmail = document.getElementById('dropdown-user-email');
+            
+            var initial = user.email ? user.email.charAt(0).toUpperCase() : 'U';
+            var displayName = user.email ? user.email.split('@')[0] : 'User';
+            
+            if (avatar) avatar.querySelector('span').textContent = initial;
+            if (userName) userName.textContent = displayName;
+            if (userEmail) userEmail.textContent = user.email || '';
+            
+            showToast('Welcome to Sentinel Core!', 'success');
+        }
+        
+        function handleLogout() {
+            if (supabaseClient) {
+                supabaseClient.auth.signOut();
+            }
+            currentUser = null;
+            
+            // Clear stored user
+            try {
+                localStorage.removeItem('sentinel_user');
+            } catch (e) {}
+            
+            // Show landing, hide app
+            var landing = document.getElementById('landing-page');
+            var app = document.getElementById('app-container');
+            if (landing) landing.classList.remove('hidden');
+            if (app) app.classList.add('hidden');
+            
+            showToast('Signed out successfully', 'success');
+        }
+        
+        function showToast(message, type) {
+            var container = document.getElementById('toast-container');
+            if (!container) {
+                console.log('Toast:', type, message);
+                return;
+            }
+            var toast = document.createElement('div');
+            toast.className = 'toast ' + (type || 'info');
+            toast.innerHTML = '<span class="toast-message">' + message + '</span>';
+            container.appendChild(toast);
+            setTimeout(function() {
+                toast.style.opacity = '0';
+                setTimeout(function() { toast.remove(); }, 300);
+            }, 4000);
+        }
+        
+        function toggleUserDropdown() {
+            var dropdown = document.getElementById('user-dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('hidden');
+            }
+        }
+        
+        function switchView(view) {
+            // Hide dropdown
+            var dropdown = document.getElementById('user-dropdown');
+            if (dropdown) dropdown.classList.add('hidden');
+            
+            // Update nav
+            document.querySelectorAll('.app-nav-link').forEach(function(link) {
+                link.classList.toggle('active', link.dataset.view === view);
+            });
+            
+            // Update views
+            var dashboard = document.getElementById('dashboard-view');
+            var history = document.getElementById('history-view');
+            var settings = document.getElementById('settings-view');
+            
+            if (dashboard) dashboard.classList.toggle('hidden', view !== 'dashboard');
+            if (history) history.classList.toggle('hidden', view !== 'history');
+            if (settings) settings.classList.toggle('hidden', view !== 'settings');
+        }
+        
+        // File upload handling
+        function handleFileSelect(input) {
+            if (input.files && input.files.length > 0) {
+                processFile(input.files[0]);
+            }
+        }
+        
+        async function processFile(file) {
+            if (file.type !== 'application/pdf') {
+                showToast('Please upload a PDF file', 'error');
+                return;
+            }
+            
+            if (file.size > 50 * 1024 * 1024) {
+                showToast('File size must be under 50MB', 'error');
+                return;
+            }
+            
+            var uploadArea = document.getElementById('upload-area');
+            var uploadProgress = document.getElementById('upload-progress');
+            
+            if (uploadArea) uploadArea.classList.add('hidden');
+            if (uploadProgress) uploadProgress.classList.remove('hidden');
+            
+            // Progress animation interval
+            var progressInterval = null;
+            var currentProgress = 0;
+            
+            function animateProgress(targetProgress, text) {
+                if (progressInterval) clearInterval(progressInterval);
+                progressInterval = setInterval(function() {
+                    if (currentProgress < targetProgress) {
+                        currentProgress += 1;
+                        updateProgress(currentProgress, text);
+                    } else {
+                        clearInterval(progressInterval);
+                    }
+                }, 100);
+            }
+            
+            try {
+                animateProgress(25, 'Uploading document...');
+                
+                var formData = new FormData();
+                formData.append('file', file);
+                
+                var uploadResponse = await fetch(API_BASE_URL + '/api/v1/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!uploadResponse.ok) {
+                    var error = await uploadResponse.json();
+                    throw new Error(error.detail || 'Upload failed');
+                }
+                
+                var uploadResult = await uploadResponse.json();
+                var documentId = uploadResult.document_id;
+                
+                currentProgress = 30;
+                animateProgress(50, 'Extracting text from PDF...');
+                showLoading('Extracting text from PDF...');
+                
+                // Simulate progress during analysis
+                setTimeout(function() {
+                    if (currentProgress < 90) {
+                        currentProgress = 55;
+                        animateProgress(70, 'AI analyzing clauses...');
+                        updateLoadingText('AI analyzing clauses...');
+                        setLoadingStep('analyze');
+                    }
+                }, 2000);
+                
+                setTimeout(function() {
+                    if (currentProgress < 90) {
+                        currentProgress = 72;
+                        animateProgress(85, 'Calculating risk scores...');
+                        updateLoadingText('Calculating risk scores...');
+                        setLoadingStep('risk');
+                    }
+                }, 5000);
+                
+                setTimeout(function() {
+                    if (currentProgress < 90) {
+                        currentProgress = 86;
+                        animateProgress(95, 'Generating negotiation strategies...');
+                        updateLoadingText('Generating negotiation strategies...');
+                        setLoadingStep('negotiate');
+                    }
+                }, 8000);
+                
+                var analysisResponse = await fetch(API_BASE_URL + '/api/v1/analyze/' + documentId, {
+                    method: 'POST'
+                });
+                
+                if (progressInterval) clearInterval(progressInterval);
+                
+                if (!analysisResponse.ok) {
+                    var error = await analysisResponse.json();
+                    throw new Error(error.detail || 'Analysis failed');
+                }
+                
+                var analysisResult = await analysisResponse.json();
+                
+                // Mark all steps complete
+                setLoadingStep('complete');
+                updateProgress(100, 'Complete!');
+                hideLoading();
+                displayResults(analysisResult, file.name);
+                saveToHistory(file.name, analysisResult);
+                showToast('Analysis complete!', 'success');
+                
+            } catch (error) {
+                if (progressInterval) clearInterval(progressInterval);
+                console.error('Error:', error);
+                hideLoading();
+                showToast(error.message || 'An error occurred', 'error');
+                resetUploadUI();
+            }
+        }
+        
+        function updateLoadingText(text) {
+            var loadingText = document.getElementById('loading-text');
+            if (loadingText) loadingText.textContent = text;
+        }
+        
+        function updateProgress(percent, text) {
+            var circle = document.getElementById('progress-circle');
+            var percentEl = document.getElementById('progress-percent');
+            var textEl = document.getElementById('progress-text');
+            
+            if (circle) {
+                var circumference = 2 * Math.PI * 40;
+                var offset = circumference - (percent / 100) * circumference;
+                circle.style.strokeDashoffset = offset;
+            }
+            
+            if (percentEl) percentEl.textContent = Math.round(percent) + '%';
+            if (textEl) textEl.textContent = text;
+        }
+        
+        function resetUploadUI() {
+            var uploadArea = document.getElementById('upload-area');
+            var uploadProgress = document.getElementById('upload-progress');
+            var fileInput = document.getElementById('file-input');
+            
+            if (uploadArea) uploadArea.classList.remove('hidden');
+            if (uploadProgress) uploadProgress.classList.add('hidden');
+            if (fileInput) fileInput.value = '';
+        }
+        
+        function showLoading(text) {
+            var overlay = document.getElementById('loading-overlay');
+            var textEl = document.getElementById('loading-text');
+            if (overlay) overlay.classList.remove('hidden');
+            if (textEl) textEl.textContent = text || 'Loading...';
+            
+            // Reset all steps
+            var steps = document.querySelectorAll('.loading-step');
+            steps.forEach(function(s) {
+                s.classList.remove('active', 'complete');
+            });
+            
+            // Set first step as active
+            setLoadingStep('extract');
+        }
+        
+        function hideLoading() {
+            var overlay = document.getElementById('loading-overlay');
+            if (overlay) overlay.classList.add('hidden');
+            
+            // Reset steps
+            var steps = document.querySelectorAll('.loading-step');
+            steps.forEach(function(s) {
+                s.classList.remove('active', 'complete');
+            });
+        }
+        
+        function setLoadingStep(step) {
+            var steps = ['extract', 'analyze', 'risk', 'negotiate'];
+            var currentIndex = steps.indexOf(step);
+            
+            if (step === 'complete') {
+                // Mark all steps complete
+                steps.forEach(function(s) {
+                    var el = document.getElementById('step-' + s);
+                    if (el) {
+                        el.classList.remove('active');
+                        el.classList.add('complete');
+                    }
+                });
+                return;
+            }
+            
+            steps.forEach(function(s, i) {
+                var el = document.getElementById('step-' + s);
+                if (el) {
+                    if (i < currentIndex) {
+                        el.classList.remove('active');
+                        el.classList.add('complete');
+                    } else if (i === currentIndex) {
+                        el.classList.remove('complete');
+                        el.classList.add('active');
+                    } else {
+                        el.classList.remove('active', 'complete');
+                    }
+                }
+            });
+        }
+        
+        // Results display
+        function displayResults(result, filename) {
+            var uploadSection = document.getElementById('upload-section');
+            var resultsSection = document.getElementById('results-section');
+            
+            if (uploadSection) uploadSection.classList.add('hidden');
+            if (resultsSection) resultsSection.classList.remove('hidden');
+            
+            // Header
+            var filenameEl = document.getElementById('result-filename');
+            var dateEl = document.getElementById('result-date');
+            
+            if (filenameEl) filenameEl.textContent = filename || 'Contract Analysis';
+            if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+            });
+            
+            // Risk gauge
+            animateRiskGauge(result.overall_risk_score || 0);
+            
+            // Risk summary
+            var summaryEl = document.getElementById('risk-summary-text');
+            if (summaryEl) summaryEl.textContent = result.risk_summary || 'Analysis complete.';
+            
+            // Risk breakdown
+            var breakdown = (result.metadata && result.metadata.risk_breakdown) || {};
+            var highEl = document.getElementById('high-risk-count');
+            var medEl = document.getElementById('medium-risk-count');
+            var lowEl = document.getElementById('low-risk-count');
+            
+            if (highEl) highEl.textContent = breakdown.high_risk_clauses || 0;
+            if (medEl) medEl.textContent = breakdown.medium_risk_clauses || 0;
+            if (lowEl) lowEl.textContent = breakdown.low_risk_clauses || 0;
+            
+            // Clauses
+            renderClauses(result.clauses || []);
+        }
+        
+        function animateRiskGauge(score) {
+            var progress = document.getElementById('gauge-progress');
+            var value = document.getElementById('risk-value');
+            
+            if (progress) {
+                var circumference = 2 * Math.PI * 80;
+                var offset = circumference - (score / 100) * circumference;
+                progress.style.strokeDashoffset = offset;
+            }
+            
+            if (value) value.textContent = Math.round(score);
+        }
+        
+        function renderClauses(clauses) {
+            var grid = document.getElementById('clauses-grid');
+            if (!grid) return;
+            
+            grid.innerHTML = '';
+            
+            // Store clauses globally for modal access
+            window.analysisClause = clauses;
+            
+            clauses.forEach(function(clause, index) {
+                var card = document.createElement('div');
+                card.className = 'clause-card';
+                card.dataset.type = clause.type || 'unknown';
+                card.dataset.risk = clause.risk_level || 'medium';
+                card.dataset.index = index;
+                card.style.cursor = 'pointer';
+                
+                var clauseType = (clause.type || 'unknown').replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+                
+                card.innerHTML = 
+                    '<div class="clause-header">' +
+                        '<span class="clause-type">' + clauseType + '</span>' +
+                        '<span class="clause-risk ' + (clause.risk_level || 'medium') + '">' + (clause.risk_level || 'Medium') + '</span>' +
+                    '</div>' +
+                    '<p class="clause-text">' + (clause.text || clause.clause_text || '').substring(0, 200) + '...</p>' +
+                    '<div class="clause-footer">' +
+                        '<span class="clause-issue">' + (clause.issue ? '⚠ ' + clause.issue.substring(0, 30) + '...' : '') + '</span>' +
+                        '<span class="clause-view">View Details →</span>' +
+                    '</div>';
+                
+                card.onclick = function() {
+                    showClauseModal(clause);
+                };
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        // History management
+        function saveToHistory(filename, result) {
+            try {
+                var history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+                var item = {
+                    id: Date.now().toString(),
+                    filename: filename,
+                    date: new Date().toISOString(),
+                    riskScore: result.overall_risk_score || 0,
+                    clauseCount: (result.clauses && result.clauses.length) || 0,
+                    result: result
+                };
+                history.unshift(item);
+                if (history.length > 50) history = history.slice(0, 50);
+                localStorage.setItem('sentinel_history', JSON.stringify(history));
+            } catch (e) {
+                console.warn('Failed to save history:', e);
+            }
+        }
+        
+        function resetToUpload() {
+            var uploadSection = document.getElementById('upload-section');
+            var resultsSection = document.getElementById('results-section');
+            
+            if (uploadSection) uploadSection.classList.remove('hidden');
+            if (resultsSection) resultsSection.classList.add('hidden');
+            
+            resetUploadUI();
+        }
+        
+        var currentAnalysisResult = null;
+        
+        function exportReport() {
+            if (!currentAnalysisResult) {
+                showToast('No analysis to export', 'error');
+                return;
+            }
+            
+            var result = currentAnalysisResult;
+            
+            var html = '<!DOCTYPE html><html><head><title>Contract Analysis Report</title>' +
+                '<style>body{font-family:Arial,sans-serif;padding:40px;color:#333;}' +
+                'h1{color:#1a365d;border-bottom:2px solid #3182ce;padding-bottom:10px;}' +
+                'h2{color:#2c5282;margin-top:30px;}.risk-score{font-size:48px;font-weight:bold;color:#3182ce;}' +
+                '.clause{background:#f7fafc;padding:15px;margin:10px 0;border-radius:8px;border-left:4px solid #3182ce;}' +
+                '.high{border-left-color:#e53e3e;}.medium{border-left-color:#d69e2e;}.low{border-left-color:#38a169;}</style></head>' +
+                '<body><h1>Contract Analysis Report</h1>' +
+                '<p>Generated by Sentinel Core on ' + new Date().toLocaleString() + '</p>' +
+                '<h2>Risk Assessment</h2><p class="risk-score">' + Math.round(result.overall_risk_score || 0) + '/100</p>' +
+                '<p>' + (result.risk_summary || '') + '</p><h2>Clause Analysis</h2>';
+            
+            (result.clauses || []).forEach(function(c) {
+                var clauseType = (c.type || 'unknown').replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+                html += '<div class="clause ' + (c.risk_level || 'medium') + '">' +
+                    '<strong>' + clauseType + '</strong> - ' + (c.risk_level || 'Medium') + ' Risk' +
+                    '<p>' + (c.text || c.clause_text || '') + '</p>' +
+                    (c.issue ? '<p><strong>Issue:</strong> ' + c.issue + '</p>' : '') +
+                    '</div>';
+            });
+            
+            html += '</body></html>';
+            
+            var win = window.open('', '_blank');
+            win.document.write(html);
+            win.document.close();
+            win.print();
+        }
+        
+        function clearHistory() {
+            if (!confirm('Clear all history?')) return;
+            localStorage.removeItem('sentinel_history');
+            renderHistory();
+            showToast('History cleared', 'success');
+        }
+        
+        function renderHistory() {
+            var list = document.getElementById('history-list');
+            var empty = document.getElementById('history-empty');
+            
+            if (!list) return;
+            
+            // Clear existing items
+            list.querySelectorAll('.history-item').forEach(function(item) {
+                item.remove();
+            });
+            
+            var history = [];
+            try {
+                history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+            } catch (e) {}
+            
+            if (history.length === 0) {
+                if (empty) empty.classList.remove('hidden');
+                return;
+            }
+            
+            if (empty) empty.classList.add('hidden');
+            
+            history.forEach(function(item) {
+                var el = document.createElement('div');
+                el.className = 'history-item';
+                el.dataset.id = item.id;
+                
+                var date = new Date(item.date);
+                var formattedDate = date.toLocaleDateString('en-US', {
+                    month: 'short', day: 'numeric', year: 'numeric'
+                });
+                
+                el.innerHTML = 
+                    '<div class="history-icon">📄</div>' +
+                    '<div class="history-info">' +
+                        '<span class="history-name">' + item.filename + '</span>' +
+                        '<span class="history-meta">' + formattedDate + ' • ' + item.clauseCount + ' clauses</span>' +
+                    '</div>' +
+                    '<div class="history-score">' +
+                        '<span class="history-score-value">' + Math.round(item.riskScore) + '</span>' +
+                        '<span class="history-score-label">Risk</span>' +
+                    '</div>' +
+                    '<div class="history-actions">' +
+                        '<button class="history-action view" title="View" onclick="loadHistoryItem(\'' + item.id + '\')">👁</button>' +
+                        '<button class="history-action delete" title="Delete" onclick="deleteHistoryItem(\'' + item.id + '\')">🗑</button>' +
+                    '</div>';
+                
+                list.appendChild(el);
+            });
+        }
+        
+        function loadHistoryItem(id) {
+            try {
+                var history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+                var item = history.find(function(h) { return h.id === id; });
+                if (item && item.result) {
+                    switchView('dashboard');
+                    displayResults(item.result, item.filename);
+                }
+            } catch (e) {
+                showToast('Failed to load history item', 'error');
+            }
+        }
+        
+        function deleteHistoryItem(id) {
+            try {
+                var history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+                history = history.filter(function(h) { return h.id !== id; });
+                localStorage.setItem('sentinel_history', JSON.stringify(history));
+                renderHistory();
+                showToast('Item deleted', 'success');
+            } catch (e) {
+                showToast('Failed to delete item', 'error');
+            }
+        }
+        
+        // Override switchView to render history when switching to history view
+        var originalSwitchView = switchView;
+        switchView = function(view) {
+            originalSwitchView(view);
+            if (view === 'history') {
+                renderHistory();
+            }
+        };
+        
+        function deleteAccount() {
+            if (!confirm('Are you sure you want to delete your account? This cannot be undone.')) return;
+            
+            // Clear local storage
+            localStorage.clear();
+            
+            // Sign out from Supabase
+            if (window.supabase) {
+                supabase.auth.signOut();
+            }
+            
+            showToast('Account deleted', 'success');
+            setTimeout(function() {
+                window.location.reload();
+            }, 1000);
+        }
+        
+        function showClauseModal(clause) {
+            var modal = document.getElementById('clause-modal');
+            var badge = document.getElementById('modal-badge');
+            var title = document.getElementById('modal-title');
+            var body = document.getElementById('modal-body');
+            
+            if (!modal) return;
+            
+            var clauseType = (clause.type || 'unknown').replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+            var riskLevel = clause.risk_level || 'medium';
+            
+            badge.textContent = riskLevel.charAt(0).toUpperCase() + riskLevel.slice(1) + ' Risk';
+            badge.className = 'modal-badge ' + riskLevel;
+            title.textContent = clauseType;
+            
+            body.innerHTML = 
+                '<div class="modal-section">' +
+                    '<h4>Clause Text</h4>' +
+                    '<p>' + (clause.text || clause.clause_text || '') + '</p>' +
+                '</div>' +
+                (clause.issue ? '<div class="modal-section"><h4>Issue</h4><p>' + clause.issue + '</p></div>' : '') +
+                (clause.recommendation ? '<div class="modal-section"><h4>Recommendation</h4><p>' + clause.recommendation + '</p></div>' : '') +
+                (clause.suggested_revision ? '<div class="modal-section"><h4>Suggested Revision</h4><p>' + clause.suggested_revision + '</p></div>' : '');
+            
+            modal.classList.remove('hidden');
+        }
+        
+        function hideClauseModal() {
+            var modal = document.getElementById('clause-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+        
+        // ========================================
+        // ENHANCED DASHBOARD FUNCTIONS
+        // ========================================
+        
+        var clausePieChart = null;
+        var riskTrendChart = null;
+        var currentClauseView = 'grid';
+        
+        // Update dashboard stats from history
+        function updateDashboardStats() {
+            try {
+                var history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+                
+                // Total analyses
+                document.getElementById('stat-total-analyses').textContent = history.length;
+                
+                // Average risk
+                if (history.length > 0) {
+                    var avgRisk = history.reduce(function(sum, h) { return sum + (h.riskScore || 0); }, 0) / history.length;
+                    document.getElementById('stat-avg-risk').textContent = Math.round(avgRisk);
+                }
+                
+                // Estimated time saved (5 min per analysis)
+                var hours = Math.round(history.length * 5 / 60);
+                document.getElementById('stat-time-saved').textContent = hours + 'h';
+                
+            } catch (e) {
+                console.warn('Stats update failed:', e);
+            }
+        }
+        
+        // Switch tab panels
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.results-tabs .tab').forEach(function(tab) {
+                tab.classList.toggle('active', tab.dataset.tab === tabName);
+            });
+            
+            // Update tab panels
+            document.querySelectorAll('.tab-panel').forEach(function(panel) {
+                panel.classList.toggle('active', panel.id === tabName + '-panel');
+            });
+        }
+        
+        // Set clause view (grid/list)
+        function setClauseView(view) {
+            currentClauseView = view;
+            var grid = document.getElementById('clauses-grid');
+            if (grid) {
+                grid.classList.toggle('list-view', view === 'list');
+            }
+            document.querySelectorAll('.view-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.dataset.view === view);
+            });
+        }
+        
+        // Filter clauses
+        function filterClauses() {
+            var search = (document.getElementById('clause-search').value || '').toLowerCase();
+            var typeFilter = document.getElementById('clause-type-filter').value;
+            var riskFilter = document.getElementById('risk-level-filter').value;
+            
+            document.querySelectorAll('.clause-card').forEach(function(card) {
+                var type = card.dataset.type || '';
+                var risk = card.dataset.risk || '';
+                var text = card.textContent.toLowerCase();
+                
+                var matchSearch = !search || text.indexOf(search) > -1;
+                var matchType = !typeFilter || type === typeFilter;
+                var matchRisk = !riskFilter || risk === riskFilter;
+                
+                card.style.display = (matchSearch && matchType && matchRisk) ? '' : 'none';
+            });
+        }
+        
+        // Populate clause type filter
+        function populateClauseTypeFilter(clauses) {
+            var filter = document.getElementById('clause-type-filter');
+            if (!filter) return;
+            
+            var types = {};
+            clauses.forEach(function(c) {
+                if (c.type) types[c.type] = true;
+            });
+            
+            filter.innerHTML = '<option value="">All Types</option>';
+            Object.keys(types).sort().forEach(function(type) {
+                var label = type.replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+                filter.innerHTML += '<option value="' + type + '">' + label + '</option>';
+            });
+        }
+        
+        // Create clause distribution pie chart
+        function createClausePieChart(clauses) {
+            var canvas = document.getElementById('clause-pie-chart');
+            if (!canvas || typeof Chart === 'undefined') return;
+            
+            var ctx = canvas.getContext('2d');
+            
+            // Count clause types
+            var typeCounts = {};
+            clauses.forEach(function(c) {
+                var type = (c.type || 'unknown').replace(/_/g, ' ');
+                typeCounts[type] = (typeCounts[type] || 0) + 1;
+            });
+            
+            var labels = Object.keys(typeCounts);
+            var data = Object.values(typeCounts);
+            var colors = [
+                '#3B82F6', '#8B5CF6', '#EC4899', '#F59E0B', '#10B981',
+                '#06B6D4', '#6366F1', '#EF4444', '#84CC16', '#14B8A6'
+            ];
+            
+            if (clausePieChart) clausePieChart.destroy();
+            
+            clausePieChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors.slice(0, labels.length),
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    cutout: '60%'
+                }
+            });
+            
+            // Create custom legend
+            var legend = document.getElementById('clause-legend');
+            if (legend) {
+                legend.innerHTML = labels.map(function(label, i) {
+                    return '<div class="legend-item"><span class="legend-color" style="background:' + colors[i] + '"></span>' + label + '</div>';
+                }).join('');
+            }
+        }
+        
+        // Create risk trend chart
+        function createRiskTrendChart() {
+            var canvas = document.getElementById('risk-trend-chart');
+            if (!canvas || typeof Chart === 'undefined') return;
+            
+            var ctx = canvas.getContext('2d');
+            
+            try {
+                var history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+                var days = parseInt(document.getElementById('timeline-filter').value) || 30;
+                var cutoff = new Date();
+                cutoff.setDate(cutoff.getDate() - days);
+                
+                var filtered = history.filter(function(h) {
+                    return new Date(h.date) >= cutoff;
+                }).reverse();
+                
+                var labels = filtered.map(function(h) {
+                    return new Date(h.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                });
+                var data = filtered.map(function(h) { return h.riskScore || 0; });
+                
+                if (riskTrendChart) riskTrendChart.destroy();
+                
+                riskTrendChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels.length ? labels : ['No data'],
+                        datasets: [{
+                            label: 'Risk Score',
+                            data: data.length ? data : [0],
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#3B82F6',
+                            pointBorderColor: '#fff',
+                            pointRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                grid: { color: 'rgba(255,255,255,0.05)' },
+                                ticks: { color: '#64748B' }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { color: '#64748B' }
+                            }
+                        }
+                    }
+                });
+            } catch (e) {
+                console.warn('Risk trend chart failed:', e);
+            }
+        }
+        
+        // Update executive summary
+        function updateExecutiveSummary(result) {
+            var risk = Math.round(result.overall_risk_score || 0);
+            var clauses = (result.clauses || []).length;
+            var issues = (result.clauses || []).filter(function(c) { return c.risk_level === 'high' || c.risk_level === 'medium'; }).length;
+            var strategies = (result.negotiation_strategies || []).length;
+            
+            document.getElementById('summary-risk').textContent = risk;
+            document.getElementById('summary-clauses').textContent = clauses;
+            document.getElementById('summary-issues').textContent = issues;
+            document.getElementById('summary-strategies').textContent = strategies;
+            
+            // Update trends
+            var riskLevel = risk >= 70 ? 'High Risk' : risk >= 40 ? 'Medium Risk' : 'Low Risk';
+            document.getElementById('summary-risk-trend').textContent = riskLevel;
+            document.getElementById('summary-risk-trend').style.color = risk >= 70 ? '#EF4444' : risk >= 40 ? '#F59E0B' : '#22C55E';
+            
+            document.getElementById('summary-issues-trend').textContent = issues > 0 ? 'Require attention' : 'Looking good!';
+            
+            // Update risk badge
+            var badge = document.getElementById('risk-level-badge');
+            if (badge) {
+                badge.textContent = riskLevel;
+                badge.style.background = risk >= 70 ? 'rgba(239,68,68,0.1)' : risk >= 40 ? 'rgba(245,158,11,0.1)' : 'rgba(34,197,94,0.1)';
+                badge.style.color = risk >= 70 ? '#EF4444' : risk >= 40 ? '#F59E0B' : '#22C55E';
+            }
+        }
+        
+        // Update risk breakdown bars
+        function updateRiskBreakdown(clauses) {
+            var high = 0, medium = 0, low = 0;
+            clauses.forEach(function(c) {
+                if (c.risk_level === 'high') high++;
+                else if (c.risk_level === 'medium') medium++;
+                else low++;
+            });
+            
+            var total = clauses.length || 1;
+            
+            document.getElementById('high-risk-count').textContent = high;
+            document.getElementById('medium-risk-count').textContent = medium;
+            document.getElementById('low-risk-count').textContent = low;
+            
+            // Animate bars
+            setTimeout(function() {
+                document.getElementById('high-risk-bar').style.width = (high / total * 100) + '%';
+                document.getElementById('medium-risk-bar').style.width = (medium / total * 100) + '%';
+                document.getElementById('low-risk-bar').style.width = (low / total * 100) + '%';
+            }, 100);
+            
+            // Update tab count
+            document.getElementById('clauses-count').textContent = clauses.length;
+        }
+        
+        // Update AI insights
+        function updateAIInsights(result) {
+            var clauses = result.clauses || [];
+            var highRisk = clauses.filter(function(c) { return c.risk_level === 'high'; });
+            
+            // Key finding
+            var keyFinding = document.getElementById('insight-key-finding');
+            if (highRisk.length > 0) {
+                keyFinding.textContent = 'Found ' + highRisk.length + ' high-risk clauses requiring immediate attention. Focus on ' + (highRisk[0].type || 'key areas').replace(/_/g, ' ') + '.';
+            } else {
+                keyFinding.textContent = 'Contract appears to have manageable risk levels. ' + clauses.length + ' clauses analyzed.';
+            }
+            
+            // Red flags
+            var redFlags = document.getElementById('insight-red-flags');
+            var flags = highRisk.map(function(c) { return (c.type || '').replace(/_/g, ' '); }).slice(0, 3);
+            redFlags.textContent = flags.length ? flags.join(', ') : 'No critical red flags detected.';
+            
+            // Strengths
+            var strengths = document.getElementById('insight-strengths');
+            var lowRisk = clauses.filter(function(c) { return c.risk_level === 'low'; }).length;
+            strengths.textContent = lowRisk > 0 ? lowRisk + ' clauses are favorable. Contract has good foundational terms.' : 'Review recommended for all clauses.';
+        }
+        
+        // Update negotiation priorities
+        function updateNegotiationPriorities(result) {
+            var list = document.getElementById('priority-list');
+            if (!list) return;
+            
+            var strategies = result.negotiation_strategies || [];
+            var clauses = result.clauses || [];
+            
+            // Create priorities from high-risk clauses
+            var priorities = clauses.filter(function(c) { return c.risk_level === 'high' || c.risk_level === 'medium'; })
+                .slice(0, 5)
+                .map(function(c, i) {
+                    return {
+                        rank: i + 1,
+                        title: (c.type || 'Clause').replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); }),
+                        desc: c.issue || c.recommendation || 'Review recommended',
+                        leverage: c.risk_level === 'high' ? 'High' : 'Medium'
+                    };
+                });
+            
+            if (priorities.length === 0) {
+                list.innerHTML = '<div class="priority-item"><span class="priority-rank">✓</span><div class="priority-content"><span class="priority-title">No critical issues</span><span class="priority-desc">Contract terms are favorable</span></div></div>';
+                return;
+            }
+            
+            list.innerHTML = priorities.map(function(p) {
+                return '<div class="priority-item">' +
+                    '<span class="priority-rank">' + p.rank + '</span>' +
+                    '<div class="priority-content"><span class="priority-title">' + p.title + '</span><span class="priority-desc">' + p.desc.substring(0, 60) + '</span></div>' +
+                    '<span class="priority-leverage ' + p.leverage.toLowerCase() + '">' + p.leverage + '</span></div>';
+            }).join('');
+        }
+        
+        // Render negotiation grid
+        function renderNegotiationGrid(result) {
+            var grid = document.getElementById('negotiation-grid');
+            if (!grid) return;
+            
+            var strategies = result.negotiation_strategies || [];
+            var clauses = result.clauses || [];
+            
+            // Use clauses with negotiation info
+            var items = clauses.filter(function(c) { return c.issue || c.recommendation; }).map(function(c) {
+                return {
+                    type: (c.type || 'Clause').replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); }),
+                    strategy: c.recommendation || c.issue || 'Consider revision',
+                    leverage: c.risk_level === 'high' ? 'High' : c.risk_level === 'medium' ? 'Medium' : 'Low',
+                    tactics: [c.risk_level === 'high' ? 'Priority' : 'Standard', 'Negotiate', 'Document']
+                };
+            });
+            
+            // Update stats
+            document.getElementById('neg-total').textContent = items.length;
+            document.getElementById('neg-high-leverage').textContent = items.filter(function(i) { return i.leverage === 'High'; }).length;
+            document.getElementById('neg-quick-wins').textContent = items.filter(function(i) { return i.leverage === 'Low'; }).length;
+            document.getElementById('negotiation-count').textContent = items.length;
+            
+            grid.innerHTML = items.map(function(item) {
+                return '<div class="negotiation-item">' +
+                    '<div class="negotiation-item-header">' +
+                        '<span class="negotiation-clause-type">' + item.type + '</span>' +
+                        '<span class="leverage-badge ' + item.leverage.toLowerCase() + '">' + item.leverage + ' Leverage</span>' +
+                    '</div>' +
+                    '<p class="negotiation-strategy">' + item.strategy + '</p>' +
+                    '<div class="negotiation-tactics">' + item.tactics.map(function(t) {
+                        return '<span class="tactic-tag">' + t + '</span>';
+                    }).join('') + '</div>' +
+                '</div>';
+            }).join('') || '<p style="color: var(--text-muted); text-align: center;">No negotiation strategies available.</p>';
+        }
+        
+        // Render improvements list
+        function renderImprovements(result) {
+            var list = document.getElementById('improvements-list');
+            if (!list) return;
+            
+            var clauses = result.clauses || [];
+            var improvements = clauses.filter(function(c) { return c.suggested_revision || c.recommendation; })
+                .slice(0, 10)
+                .map(function(c, i) {
+                    return {
+                        num: i + 1,
+                        title: (c.type || 'Clause').replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); }),
+                        text: c.suggested_revision || c.recommendation || ''
+                    };
+                });
+            
+            list.innerHTML = improvements.map(function(imp) {
+                return '<div class="improvement-item">' +
+                    '<span class="improvement-number">' + imp.num + '</span>' +
+                    '<div class="improvement-content"><h5>' + imp.title + '</h5><p>' + imp.text + '</p></div>' +
+                '</div>';
+            }).join('') || '<p style="color: var(--text-muted); text-align: center;">No specific improvements suggested.</p>';
+        }
+        
+        // Populate comparison selector
+        function populateComparisonSelector() {
+            var select = document.getElementById('comparison-select');
+            if (!select) return;
+            
+            try {
+                var history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+                select.innerHTML = '<option value="">Select previous analysis...</option>';
+                
+                history.forEach(function(h) {
+                    var date = new Date(h.date).toLocaleDateString();
+                    select.innerHTML += '<option value="' + h.id + '">' + h.filename + ' (' + date + ') - Risk: ' + Math.round(h.riskScore) + '</option>';
+                });
+            } catch (e) {}
+        }
+        
+        // Load comparison
+        function loadComparison() {
+            var select = document.getElementById('comparison-select');
+            var view = document.getElementById('comparison-view');
+            var currentRisk = document.getElementById('current-risk');
+            var previousRisk = document.getElementById('previous-risk');
+            
+            if (!select || !select.value) {
+                if (view) view.classList.add('hidden');
+                return;
+            }
+            
+            try {
+                var history = JSON.parse(localStorage.getItem('sentinel_history') || '[]');
+                var item = history.find(function(h) { return h.id === select.value; });
+                
+                if (item && currentAnalysisResult) {
+                    if (currentRisk) currentRisk.textContent = Math.round(currentAnalysisResult.overall_risk_score || 0);
+                    if (previousRisk) previousRisk.textContent = Math.round(item.riskScore);
+                    if (view) view.classList.remove('hidden');
+                }
+            } catch (e) {}
+        }
+        
+        // Enhanced display results
+        var baseDisplayResults = displayResults;
+        displayResults = function(result, filename) {
+            // Store current result for export
+            currentAnalysisResult = result;
+            
+            // Call base function
+            baseDisplayResults(result, filename);
+            
+            // Enhanced dashboard updates
+            updateExecutiveSummary(result);
+            updateRiskBreakdown(result.clauses || []);
+            updateAIInsights(result);
+            updateNegotiationPriorities(result);
+            populateClauseTypeFilter(result.clauses || []);
+            
+            // Create charts
+            setTimeout(function() {
+                createClausePieChart(result.clauses || []);
+                createRiskTrendChart();
+            }, 500);
+            
+            // Render additional panels
+            renderNegotiationGrid(result);
+            renderImprovements(result);
+            populateComparisonSelector();
+            
+            // Update stats
+            updateDashboardStats();
+        };
+        
+        // Initialize dashboard on load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDashboardStats();
+            
+            // Timeline filter change
+            var timelineFilter = document.getElementById('timeline-filter');
+            if (timelineFilter) {
+                timelineFilter.onchange = createRiskTrendChart;
+            }
+        });
+    </script>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal-overlay hidden" onclick="if(event.target===this)hideAuthModal()">
+        <div class="auth-modal-content glass-card">
+            <button class="modal-close" id="auth-close" onclick="hideAuthModal()">&times;</button>
+            
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="url(#auth-grad)" stroke-width="2"/>
+                        <path d="M20 8 L32 16 L32 32 L20 38 L8 32 L8 16 Z" fill="url(#auth-grad)" opacity="0.2"/>
+                        <circle cx="20" cy="22" r="6" fill="url(#auth-grad)"/>
+                        <defs>
+                            <linearGradient id="auth-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60A5FA"/>
+                                <stop offset="100%" stop-color="#3B82F6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h2 id="auth-title">Welcome Back</h2>
+                <p id="auth-subtitle">Sign in to your account</p>
+            </div>
+            
+            <form id="auth-form" onsubmit="event.preventDefault();handleAuthSubmit();return false;">
+                <div class="form-group">
+                    <label for="auth-email">Email</label>
+                    <input type="email" id="auth-email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary btn-full" id="auth-submit" onclick="event.preventDefault();handleAuthSubmit();return false;">
+                    <span>Sign In</span>
+                    <div class="btn-loader hidden"></div>
+                </button>
+            </form>
+            
+            <div class="auth-divider"><span>or continue with</span></div>
+            
+            <button class="btn-oauth" id="google-auth" onclick="handleGoogleAuth()">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                <span>Google</span>
+            </button>
+            
+            <div class="auth-footer">
+                <span id="auth-toggle-text">Don't have an account?</span>
+                <button type="button" id="auth-toggle" class="btn-link" onclick="toggleAuthMode()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Landing Page -->
+    <section id="landing-page">
+        <!-- Navigation -->
+        <nav class="landing-nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="url(#nav-grad)" stroke-width="2"/>
+                        <path d="M20 8 L32 16 L32 32 L20 38 L8 32 L8 16 Z" fill="url(#nav-grad)" opacity="0.3"/>
+                        <circle cx="20" cy="22" r="6" fill="url(#nav-grad)"/>
+                        <defs>
+                            <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60A5FA"/>
+                                <stop offset="100%" stop-color="#3B82F6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>Sentinel Core</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn-ghost" id="nav-login" onclick="showAuthModal('login')">Sign In</button>
+                    <button class="btn-primary" id="nav-signup" onclick="showAuthModal('signup')">Get Started</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg">
+                <div class="hero-gradient"></div>
+                <div class="hero-grid"></div>
+                <div class="floating-orbs">
+                    <div class="orb orb-1"></div>
+                    <div class="orb orb-2"></div>
+                    <div class="orb orb-3"></div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    <span>AI-Powered Contract Intelligence</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line">Transform Contract</span>
+                    <span class="title-line gradient-text">Analysis Forever</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Enterprise-grade AI that reads, analyzes, and negotiates contracts 
+                    in seconds. Identify risks, extract insights, and close deals faster.
+                </p>
+                
+                <div class="hero-cta">
+                    <button class="btn-primary btn-large" id="hero-cta" onclick="showAuthModal('signup')">
+                        <span>Start Free Trial</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="btn-ghost btn-large" id="hero-demo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10,8 16,12 10,16" fill="currentColor"/>
+                        </svg>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value" data-count="99.9">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value" data-count="10">0</span>
+                        <span class="stat-unit">x</span>
+                        <span class="stat-label">Faster Analysis</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value" data-count="50">0</span>
+                        <span class="stat-unit">K+</span>
+                        <span class="stat-label">Contracts Analyzed</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="preview-header">
+                        <div class="preview-dots"><span></span><span></span><span></span></div>
+                        <span class="preview-title">Contract Analysis</span>
+                    </div>
+                    <div class="preview-content">
+                        <div class="preview-sidebar">
+                            <div class="preview-item active"></div>
+                            <div class="preview-item"></div>
+                            <div class="preview-item"></div>
+                        </div>
+                        <div class="preview-main">
+                            <div class="preview-card">
+                                <div class="preview-score">
+                                    <svg viewBox="0 0 100 100">
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#1E293B" stroke-width="8"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="url(#score-grad)" stroke-width="8" 
+                                                stroke-dasharray="200" stroke-dashoffset="60" stroke-linecap="round"/>
+                                        <defs>
+                                            <linearGradient id="score-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="#22C55E"/>
+                                                <stop offset="100%" stop-color="#3B82F6"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <span>72</span>
+                                </div>
+                                <div class="preview-bars">
+                                    <div class="bar bar-high"></div>
+                                    <div class="bar bar-med"></div>
+                                    <div class="bar bar-low"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">Features</span>
+                    <h2 class="section-title">Everything You Need for<br><span class="gradient-text">Contract Intelligence</span></h2>
+                    <p class="section-description">Powerful AI tools designed for legal teams, enterprises, and dealmakers.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card" data-feature="1">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="6" width="32" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M14 16h20M14 24h16M14 32h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="36" cy="36" r="8" fill="url(#feat1-grad)"/>
+                                <path d="M33 36l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs><linearGradient id="feat1-grad" x1="28" y1="28" x2="44" y2="44"><stop stop-color="#3B82F6"/><stop offset="1" stop-color="#1D4ED8"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3>Smart Clause Detection</h3>
+                        <p>AI automatically identifies and categorizes every clause with 99.9% accuracy.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="2">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4L42 14v20L24 44 6 34V14L24 4z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="24" cy="24" r="8" fill="url(#feat2-grad)"/>
+                                <defs><linearGradient id="feat2-grad" x1="16" y1="16" x2="32" y2="32"><stop stop-color="#8B5CF6"/><stop offset="1" stop-color="#6D28D9"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3>Risk Assessment</h3>
+                        <p>Comprehensive risk scoring with detailed breakdown of all risk factors.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="3">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 12v12l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="24" cy="24" r="4" fill="url(#feat3-grad)"/>
+                                <defs><linearGradient id="feat3-grad" x1="20" y1="20" x2="28" y2="28"><stop stop-color="#F59E0B"/><stop offset="1" stop-color="#D97706"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3>Instant Analysis</h3>
+                        <p>Get comprehensive analysis in seconds. 10x faster than manual review.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="4">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <path d="M8 24c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 24c0 8.837 7.163 16 16 16s16-7.163 16-16" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                                <rect x="18" y="18" width="12" height="12" rx="2" fill="url(#feat4-grad)"/>
+                                <defs><linearGradient id="feat4-grad" x1="18" y1="18" x2="30" y2="30"><stop stop-color="#10B981"/><stop offset="1" stop-color="#059669"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3>Negotiation Strategies</h3>
+                        <p>AI-generated strategies tailored to each clause with leverage assessment.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="5">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 18h36" stroke="currentColor" stroke-width="2"/>
+                                <rect x="12" y="24" width="24" height="8" rx="2" fill="url(#feat5-grad)" opacity="0.5"/>
+                                <defs><linearGradient id="feat5-grad" x1="12" y1="24" x2="36" y2="32"><stop stop-color="#EC4899"/><stop offset="1" stop-color="#BE185D"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3>Export & Reports</h3>
+                        <p>Generate professional PDF reports ready for stakeholders.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="6">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" fill="url(#feat6-grad)" opacity="0.2"/>
+                                <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="currentColor" stroke-width="2"/>
+                                <defs><linearGradient id="feat6-grad" x1="6" y1="4" x2="42" y2="44"><stop stop-color="#06B6D4"/><stop offset="1" stop-color="#0891B2"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h3>Enterprise Security</h3>
+                        <p>Bank-grade encryption, SOC 2 compliant, with complete privacy controls.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">Process</span>
+                    <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+                    <p class="section-description">Three simple steps to transform your contract workflow.</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step" data-step="1">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Upload Contract</h3>
+                            <p>Drop your PDF contract. We support all formats up to 50MB.</p>
+                        </div>
+                        <div class="step-visual">
+                            <div class="upload-animation">
+                                <div class="upload-box">
+                                    <svg viewBox="0 0 48 48" fill="none">
+                                        <path d="M24 32V16M16 24l8-8 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        <rect x="8" y="6" width="32" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="2">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>AI Analysis</h3>
+                            <p>Gemini-powered AI reads every clause and identifies risks.</p>
+                        </div>
+                        <div class="step-visual">
+                            <div class="analysis-animation">
+                                <div class="pulse-ring"></div>
+                                <div class="pulse-ring delay-1"></div>
+                                <div class="pulse-ring delay-2"></div>
+                                <div class="ai-core">AI</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-step="3">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Get Insights</h3>
+                            <p>Review analysis with risk scores and exportable reports.</p>
+                        </div>
+                        <div class="step-visual">
+                            <div class="insights-animation">
+                                <div class="insight-card card-1"></div>
+                                <div class="insight-card card-2"></div>
+                                <div class="insight-card card-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-bg"><div class="cta-gradient"></div></div>
+            <div class="section-container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your<br><span class="gradient-text">Contract Workflow?</span></h2>
+                    <p>Join thousands of legal teams using Sentinel Core to close deals faster.</p>
+                    <button class="btn-primary btn-large" id="cta-button" onclick="showAuthModal('signup')">
+                        <span>Start Free Trial</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="url(#footer-grad)" stroke-width="2"/>
+                            <circle cx="20" cy="22" r="6" fill="url(#footer-grad)"/>
+                            <defs><linearGradient id="footer-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient></defs>
+                        </svg>
+                        <span>Sentinel Core</span>
+                    </div>
+                    <p>AI-powered contract intelligence for modern legal teams.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column"><h4>Product</h4><a href="#">Features</a><a href="#">Pricing</a><a href="#">Security</a></div>
+                    <div class="footer-column"><h4>Company</h4><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a></div>
+                    <div class="footer-column"><h4>Legal</h4><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Sentinel Core. All rights reserved.</p></div>
+        </footer>
+    </section>
+
+    <!-- Application (Dashboard) -->
+    <section id="app-container" class="hidden">
+        <!-- App Navigation -->
+        <nav class="app-nav">
+            <div class="app-nav-brand">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="url(#app-nav-grad)" stroke-width="2"/>
+                    <circle cx="20" cy="22" r="6" fill="url(#app-nav-grad)"/>
+                    <defs><linearGradient id="app-nav-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient></defs>
+                </svg>
+                <span>Sentinel Core</span>
+            </div>
+            <div class="app-nav-links">
+                <button class="app-nav-link active" data-view="dashboard" onclick="switchView('dashboard')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    <span>Dashboard</span>
+                </button>
+                <button class="app-nav-link" data-view="history" onclick="switchView('history')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                    <span>History</span>
+                </button>
+                <button class="app-nav-link" data-view="settings" onclick="switchView('settings')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    <span>Settings</span>
+                </button>
+            </div>
+            <div class="app-nav-user">
+                <div class="user-avatar" id="user-avatar" onclick="toggleUserDropdown()"><span>U</span></div>
+                <div class="user-dropdown hidden" id="user-dropdown">
+                    <div class="dropdown-header">
+                        <span class="user-name" id="dropdown-user-name">User</span>
+                        <span class="user-email" id="dropdown-user-email">user@example.com</span>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" id="dropdown-settings" onclick="switchView('settings')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></button>
+                    <button class="dropdown-item danger" id="logout-btn" onclick="handleLogout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg><span>Sign Out</span></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dashboard View -->
+        <main class="app-main" id="dashboard-view">
+            <div class="dashboard-header">
+                <div class="dashboard-title"><h1>Contract Analysis</h1><p>Upload a contract to get started with AI-powered analysis</p></div>
+                <div class="dashboard-quick-stats" id="dashboard-quick-stats">
+                    <div class="quick-stat">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                        <div class="stat-info"><span class="stat-value" id="stat-total-analyses">0</span><span class="stat-label">Analyzed</span></div>
+                    </div>
+                    <div class="quick-stat">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <div class="stat-info"><span class="stat-value" id="stat-avg-risk">--</span><span class="stat-label">Avg Risk</span></div>
+                    </div>
+                    <div class="quick-stat">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <div class="stat-info"><span class="stat-value" id="stat-time-saved">0h</span><span class="stat-label">Time Saved</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section" id="upload-section">
+                <div class="upload-card glass-card">
+                    <div class="upload-area" id="upload-area" onclick="document.getElementById('file-input').click()">
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 64 64" fill="none"><rect x="12" y="8" width="40" height="48" rx="4" stroke="currentColor" stroke-width="2"/><path d="M32 44V24M24 32l8-8 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>Drop your contract here</h3>
+                        <p>or click to browse files</p>
+                        <span class="upload-hint">Supports PDF files up to 50MB</span>
+                        <input type="file" id="file-input" accept=".pdf" hidden onchange="handleFileSelect(this)">
+                    </div>
+                    <div class="upload-progress hidden" id="upload-progress">
+                        <div class="progress-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#1E293B" stroke-width="8"/>
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="url(#progress-grad)" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="251" id="progress-circle" stroke-linecap="round"/>
+                                <defs><linearGradient id="progress-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient></defs>
+                            </svg>
+                            <span class="progress-percent" id="progress-percent">0%</span>
+                        </div>
+                        <p class="progress-text" id="progress-text">Uploading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section - ENHANCED -->
+            <div class="results-section hidden" id="results-section">
+                <!-- Results Header -->
+                <div class="results-header">
+                    <div class="results-info"><h2 id="result-filename">Contract Analysis</h2><span class="result-date" id="result-date"></span></div>
+                    <div class="results-actions">
+                        <button class="btn-ghost" id="new-analysis-btn" onclick="resetToUpload()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>New Analysis</span></button>
+                        <button class="btn-ghost" onclick="window.print()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg><span>Print</span></button>
+                        <button class="btn-primary" id="export-btn" onclick="exportReport()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg><span>Export PDF</span></button>
+                    </div>
+                </div>
+
+                <!-- Executive Summary Cards -->
+                <div class="executive-summary">
+                    <div class="summary-card glass-card risk-card">
+                        <div class="summary-icon risk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div class="summary-content">
+                            <span class="summary-label">Overall Risk</span>
+                            <span class="summary-value" id="summary-risk">--</span>
+                            <span class="summary-trend" id="summary-risk-trend">Analyzing...</span>
+                        </div>
+                    </div>
+                    <div class="summary-card glass-card">
+                        <div class="summary-icon clauses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+                        <div class="summary-content">
+                            <span class="summary-label">Total Clauses</span>
+                            <span class="summary-value" id="summary-clauses">0</span>
+                            <span class="summary-trend" id="summary-clauses-trend">Detected</span>
+                        </div>
+                    </div>
+                    <div class="summary-card glass-card">
+                        <div class="summary-icon issues"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                        <div class="summary-content">
+                            <span class="summary-label">Issues Found</span>
+                            <span class="summary-value" id="summary-issues">0</span>
+                            <span class="summary-trend" id="summary-issues-trend">Require attention</span>
+                        </div>
+                    </div>
+                    <div class="summary-card glass-card">
+                        <div class="summary-icon strategies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                        <div class="summary-content">
+                            <span class="summary-label">Strategies</span>
+                            <span class="summary-value" id="summary-strategies">0</span>
+                            <span class="summary-trend" id="summary-strategies-trend">Negotiation tips</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Analysis Grid -->
+                <div class="analysis-grid">
+                    <!-- Left Column - Risk Analysis -->
+                    <div class="analysis-column left">
+                        <!-- Risk Gauge -->
+                        <div class="analysis-card glass-card risk-gauge-card">
+                            <div class="card-header">
+                                <h3>Risk Assessment</h3>
+                                <div class="card-badge" id="risk-level-badge">Analyzing</div>
+                            </div>
+                            <div class="risk-gauge-wrapper">
+                                <div class="risk-gauge">
+                                    <svg viewBox="0 0 200 200" id="risk-gauge-svg">
+                                        <defs>
+                                            <linearGradient id="gauge-low" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22C55E"/><stop offset="100%" stop-color="#4ADE80"/></linearGradient>
+                                            <linearGradient id="gauge-medium" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+                                            <linearGradient id="gauge-high" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#EF4444"/><stop offset="100%" stop-color="#F87171"/></linearGradient>
+                                        </defs>
+                                        <circle cx="100" cy="100" r="80" fill="none" stroke="#1E293B" stroke-width="12"/>
+                                        <circle cx="100" cy="100" r="80" fill="none" stroke="url(#gauge-low)" stroke-width="12" stroke-dasharray="502" stroke-dashoffset="502" id="gauge-progress" stroke-linecap="round" transform="rotate(-90 100 100)"/>
+                                    </svg>
+                                    <div class="risk-score-display"><span class="risk-value" id="risk-value">0</span><span class="risk-label">Risk Score</span></div>
+                                </div>
+                                <div class="risk-indicators">
+                                    <div class="indicator low"><span class="dot"></span><span>0-39 Low</span></div>
+                                    <div class="indicator medium"><span class="dot"></span><span>40-69 Medium</span></div>
+                                    <div class="indicator high"><span class="dot"></span><span>70-100 High</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Risk Breakdown -->
+                        <div class="analysis-card glass-card">
+                            <div class="card-header"><h3>Risk Breakdown</h3></div>
+                            <div class="risk-breakdown-chart">
+                                <div class="breakdown-bar-container">
+                                    <div class="breakdown-bar-item">
+                                        <div class="bar-label"><span>High Risk</span><span class="bar-count" id="high-risk-count">0</span></div>
+                                        <div class="bar-track"><div class="bar-fill high" id="high-risk-bar" style="width: 0%"></div></div>
+                                    </div>
+                                    <div class="breakdown-bar-item">
+                                        <div class="bar-label"><span>Medium Risk</span><span class="bar-count" id="medium-risk-count">0</span></div>
+                                        <div class="bar-track"><div class="bar-fill medium" id="medium-risk-bar" style="width: 0%"></div></div>
+                                    </div>
+                                    <div class="breakdown-bar-item">
+                                        <div class="bar-label"><span>Low Risk</span><span class="bar-count" id="low-risk-count">0</span></div>
+                                        <div class="bar-track"><div class="bar-fill low" id="low-risk-bar" style="width: 0%"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Clause Distribution Pie Chart -->
+                        <div class="analysis-card glass-card">
+                            <div class="card-header"><h3>Clause Distribution</h3></div>
+                            <div class="chart-container">
+                                <canvas id="clause-pie-chart" width="280" height="200"></canvas>
+                            </div>
+                            <div class="chart-legend" id="clause-legend"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Details -->
+                    <div class="analysis-column right">
+                        <!-- AI Insights Panel -->
+                        <div class="analysis-card glass-card insights-card">
+                            <div class="card-header">
+                                <h3>🤖 AI Insights</h3>
+                                <span class="ai-badge">Gemini AI</span>
+                            </div>
+                            <div class="insights-content">
+                                <div class="insight-item">
+                                    <div class="insight-icon warning"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg></div>
+                                    <div class="insight-text">
+                                        <strong>Key Finding</strong>
+                                        <p id="insight-key-finding">Analysis in progress...</p>
+                                    </div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-icon danger"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                                    <div class="insight-text">
+                                        <strong>Red Flags</strong>
+                                        <p id="insight-red-flags">Scanning for issues...</p>
+                                    </div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-icon success"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                                    <div class="insight-text">
+                                        <strong>Strengths</strong>
+                                        <p id="insight-strengths">Identifying positives...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="risk-summary-text" id="risk-summary-text"></div>
+                        </div>
+
+                        <!-- Top Negotiation Priorities -->
+                        <div class="analysis-card glass-card negotiation-priorities-card">
+                            <div class="card-header">
+                                <h3>🎯 Top Negotiation Priorities</h3>
+                                <span class="priority-badge">Ranked</span>
+                            </div>
+                            <div class="priority-list" id="priority-list">
+                                <div class="priority-item placeholder">
+                                    <span class="priority-rank">1</span>
+                                    <div class="priority-content">
+                                        <span class="priority-title">Analyzing priorities...</span>
+                                        <span class="priority-desc">Processing contract clauses</span>
+                                    </div>
+                                    <span class="priority-leverage">--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Risk Timeline (if history exists) -->
+                        <div class="analysis-card glass-card timeline-card">
+                            <div class="card-header">
+                                <h3>📈 Risk Trend</h3>
+                                <select class="timeline-filter" id="timeline-filter">
+                                    <option value="7">Last 7 days</option>
+                                    <option value="30" selected>Last 30 days</option>
+                                    <option value="90">Last 90 days</option>
+                                </select>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="risk-trend-chart" width="400" height="150"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Section -->
+                <div class="results-tabs">
+                    <div class="tabs-header">
+                        <button class="tab active" data-tab="clauses" onclick="switchTab('clauses')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span>Clauses Analysis</span><span class="tab-count" id="clauses-count">0</span></button>
+                        <button class="tab" data-tab="negotiation" onclick="switchTab('negotiation')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span>Negotiation Strategies</span><span class="tab-count" id="negotiation-count">0</span></button>
+                        <button class="tab" data-tab="improvements" onclick="switchTab('improvements')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg><span>Suggested Improvements</span></button>
+                        <button class="tab" data-tab="comparison" onclick="switchTab('comparison')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M8 3H3v5M3 16v5h5M16 21h5v-5"/></svg><span>Comparison</span></button>
+                    </div>
+                    <div class="tabs-content">
+                        <!-- Clauses Panel -->
+                        <div class="tab-panel active" id="clauses-panel">
+                            <div class="panel-toolbar">
+                                <div class="toolbar-left">
+                                    <div class="search-box">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                                        <input type="text" placeholder="Search clauses..." id="clause-search" onkeyup="filterClauses()">
+                                    </div>
+                                </div>
+                                <div class="toolbar-right">
+                                    <div class="filter-group"><label>Type</label><select id="clause-type-filter" onchange="filterClauses()"><option value="">All Types</option></select></div>
+                                    <div class="filter-group"><label>Risk</label><select id="risk-level-filter" onchange="filterClauses()"><option value="">All Levels</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></div>
+                                    <div class="view-toggle">
+                                        <button class="view-btn active" data-view="grid" onclick="setClauseView('grid')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button>
+                                        <button class="view-btn" data-view="list" onclick="setClauseView('list')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clauses-grid" id="clauses-grid"></div>
+                        </div>
+
+                        <!-- Negotiation Panel -->
+                        <div class="tab-panel" id="negotiation-panel">
+                            <div class="negotiation-header">
+                                <div class="negotiation-stats">
+                                    <div class="neg-stat"><span class="neg-stat-value" id="neg-total">0</span><span class="neg-stat-label">Total Strategies</span></div>
+                                    <div class="neg-stat"><span class="neg-stat-value" id="neg-high-leverage">0</span><span class="neg-stat-label">High Leverage</span></div>
+                                    <div class="neg-stat"><span class="neg-stat-value" id="neg-quick-wins">0</span><span class="neg-stat-label">Quick Wins</span></div>
+                                </div>
+                            </div>
+                            <div class="negotiation-grid" id="negotiation-grid"></div>
+                        </div>
+
+                        <!-- Improvements Panel -->
+                        <div class="tab-panel" id="improvements-panel">
+                            <div class="improvements-intro">
+                                <h4>Suggested Contract Improvements</h4>
+                                <p>AI-generated recommendations to strengthen your position</p>
+                            </div>
+                            <div class="improvements-list" id="improvements-list"></div>
+                        </div>
+
+                        <!-- Comparison Panel -->
+                        <div class="tab-panel" id="comparison-panel">
+                            <div class="comparison-intro">
+                                <h4>Compare with Previous Analysis</h4>
+                                <p>Select a previous analysis to compare risk and clauses</p>
+                            </div>
+                            <div class="comparison-selector">
+                                <select id="comparison-select" onchange="loadComparison()">
+                                    <option value="">Select previous analysis...</option>
+                                </select>
+                            </div>
+                            <div class="comparison-view hidden" id="comparison-view">
+                                <div class="comparison-col current">
+                                    <h5>Current Analysis</h5>
+                                    <div class="comparison-risk" id="current-risk"></div>
+                                </div>
+                                <div class="comparison-vs">VS</div>
+                                <div class="comparison-col previous">
+                                    <h5>Previous Analysis</h5>
+                                    <div class="comparison-risk" id="previous-risk"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- History View -->
+        <main class="app-main hidden" id="history-view">
+            <div class="history-header">
+                <div class="history-title"><h1>Analysis History</h1><p>View and manage your previous contract analyses</p></div>
+                <div class="history-actions">
+                    <button class="btn-danger" id="clear-history-btn" onclick="clearHistory()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span>Clear All</span></button>
+                </div>
+            </div>
+            <div class="history-list" id="history-list">
+                <div class="history-empty" id="history-empty">
+                    <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" opacity="0.3"/><path d="M32 20v12l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <h3>No history yet</h3>
+                    <p>Your analyzed contracts will appear here</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Settings View -->
+        <main class="app-main hidden" id="settings-view">
+            <div class="settings-header"><h1>Settings</h1><p>Manage your account and preferences</p></div>
+            <div class="settings-content">
+                <div class="settings-section glass-card">
+                    <h3>Account</h3>
+                    <div class="settings-item"><div class="settings-item-info"><label>Email</label><span id="settings-email">user@example.com</span></div></div>
+                    <div class="settings-item"><div class="settings-item-info"><label>Password</label><span>••••••••</span></div><button class="btn-ghost btn-sm">Change</button></div>
+                </div>
+                <div class="settings-section glass-card">
+                    <h3>Preferences</h3>
+                    <div class="settings-item"><div class="settings-item-info"><label>Theme</label><span>Dark (Default)</span></div><select class="settings-select" id="theme-select"><option value="dark">Dark</option><option value="light">Light</option></select></div>
+                    <div class="settings-item"><div class="settings-item-info"><label>Auto-save history</label><span>Save analysis results automatically</span></div><label class="toggle"><input type="checkbox" id="auto-save-toggle" checked><span class="toggle-slider"></span></label></div>
+                </div>
+                <div class="settings-section glass-card danger-zone">
+                    <h3>Danger Zone</h3>
+                    <div class="settings-item"><div class="settings-item-info"><label>Delete Account</label><span>Permanently delete your account and all data</span></div><button class="btn-danger btn-sm" id="delete-account-btn" onclick="deleteAccount()">Delete</button></div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="#1E293B" stroke-width="8"/>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="url(#loading-grad)" stroke-width="8" stroke-dasharray="60 200" stroke-linecap="round">
+                        <animateTransform attributeName="transform" type="rotate" values="0 50 50;360 50 50" dur="1s" repeatCount="indefinite"/>
+                    </circle>
+                    <defs><linearGradient id="loading-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient></defs>
+                </svg>
+            </div>
+            <p class="loading-text" id="loading-text">Analyzing contract...</p>
+            <p class="loading-subtext">AI is reviewing your document. This may take 15-30 seconds.</p>
+            <div class="loading-steps" id="loading-steps">
+                <div class="loading-step" id="step-extract">
+                    <span class="loading-step-icon">📄</span>
+                    <span class="loading-step-text">Extracting text from PDF</span>
+                </div>
+                <div class="loading-step" id="step-analyze">
+                    <span class="loading-step-icon">🔍</span>
+                    <span class="loading-step-text">AI analyzing clauses</span>
+                </div>
+                <div class="loading-step" id="step-risk">
+                    <span class="loading-step-icon">⚠️</span>
+                    <span class="loading-step-text">Calculating risk scores</span>
+                </div>
+                <div class="loading-step" id="step-negotiate">
+                    <span class="loading-step-icon">🤝</span>
+                    <span class="loading-step-text">Generating negotiation strategies</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Clause Modal -->
+    <div class="modal-overlay hidden" id="clause-modal" onclick="if(event.target===this)hideClauseModal()">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modal-close" onclick="hideClauseModal()">&times;</button>
+            <div class="modal-header"><span class="modal-badge" id="modal-badge">Clause</span><h2 id="modal-title">Clause Details</h2></div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/app.js?v=17"></script>
+</body>
+</html>

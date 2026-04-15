@@ -1,0 +1,41 @@
+# Sentinel Core - Python Dependencies
+
+# Web Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
+
+# Data Validation
+pydantic>=2.5.3
+pydantic-settings>=2.1.0
+
+# PDF Processing
+pdfplumber>=0.10.3
+pdf2image>=1.16.3
+pytesseract>=0.3.10
+Pillow>=10.2.0
+
+# File Type Detection
+python-magic-bin>=0.4.14
+
+# NLP
+spacy>=3.7.4
+
+# Google AI
+google-generativeai>=0.3.2
+
+# Supabase
+supabase>=2.3.4
+
+# Retry Logic
+tenacity>=8.2.3
+
+# Async Support
+httpx>=0.24,<0.26
+aiofiles>=23.2.1
+
+# Environment
+python-dotenv>=1.0.0
+
+# Utilities
+numpy>=1.26.3

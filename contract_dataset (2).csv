@@ -1,0 +1,2001 @@
+clause,risk,category,reason
+Data encrypted at rest. (variation 0),Low,Privacy,Secure
+Termination penalty applies. (variation 1),High,Termination,Financial burden
+Payment due within 30 days. (variation 2),Low,Payment,Standard terms
+Contract auto-renews annually. (variation 3),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 4),High,Termination,Financial burden
+Vendor is not liable for indirect damages. (variation 5),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 6),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 7),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 8),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 9),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 10),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 11),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 12),High,Termination,Unfair
+Company can terminate without notice. (variation 13),High,Termination,Unfair
+Company can terminate without notice. (variation 14),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 15),High,Liability,Limits compensation
+Data encrypted at rest. (variation 16),Low,Privacy,Secure
+User activity tracked. (variation 17),Medium,Privacy,Tracking concern
+Company may change pricing anytime. (variation 18),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 19),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 20),High,Payment,Unpredictable costs
+Vendor is not liable for indirect damages. (variation 21),High,Liability,Removes accountability
+Liability is capped at total fees paid. (variation 22),High,Liability,Limits compensation
+Data encrypted at rest. (variation 23),Low,Privacy,Secure
+Company can terminate without notice. (variation 24),High,Termination,Unfair
+Contract auto-renews annually. (variation 25),Medium,Termination,Lock-in risk
+Flexible payment options available. (variation 26),Low,Payment,User-friendly
+Liability is capped at total fees paid. (variation 27),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 28),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 29),Medium,Payment,High penalty
+Company can terminate without notice. (variation 30),High,Termination,Unfair
+Company may change pricing anytime. (variation 31),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 32),High,Privacy,Privacy risk
+Liability is capped at total fees paid. (variation 33),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 34),Medium,Payment,High penalty
+User activity tracked. (variation 35),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 36),High,Termination,Financial burden
+Company can terminate without notice. (variation 37),High,Termination,Unfair
+Company may change pricing anytime. (variation 38),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 39),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 40),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 41),Medium,Payment,High penalty
+Data encrypted at rest. (variation 42),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 43),Medium,Liability,Partial limitation
+Termination penalty applies. (variation 44),High,Termination,Financial burden
+Client data shared with third parties. (variation 45),High,Privacy,Privacy risk
+Full liability accepted by vendor. (variation 46),Low,Liability,Favorable to client
+Data anonymized. (variation 47),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 48),Low,Payment,Standard terms
+Data anonymized. (variation 49),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 50),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 51),Medium,Liability,Partial limitation
+Termination penalty applies. (variation 52),High,Termination,Financial burden
+Termination penalty applies. (variation 53),High,Termination,Financial burden
+Client data shared with third parties. (variation 54),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 55),Medium,Liability,Partial limitation
+Data encrypted at rest. (variation 56),Low,Privacy,Secure
+Client data shared with third parties. (variation 57),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 58),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 59),Medium,Payment,High penalty
+Data encrypted at rest. (variation 60),Low,Privacy,Secure
+Late fee of 5% per month. (variation 61),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 62),Medium,Termination,Lock-in risk
+Contract auto-renews annually. (variation 63),Medium,Termination,Lock-in risk
+Data anonymized. (variation 64),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 65),Medium,Termination,Lock-in risk
+Data encrypted at rest. (variation 66),Low,Privacy,Secure
+Late fee of 5% per month. (variation 67),Medium,Payment,High penalty
+User activity tracked. (variation 68),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 69),High,Termination,Financial burden
+Termination penalty applies. (variation 70),High,Termination,Financial burden
+Payment due within 30 days. (variation 71),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 72),Medium,Liability,Partial limitation
+Data anonymized. (variation 73),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 74),Medium,Termination,Lock-in risk
+Data anonymized. (variation 75),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 76),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 77),High,Termination,Financial burden
+Flexible payment options available. (variation 78),Low,Payment,User-friendly
+Termination requires 60 days notice. (variation 79),Low,Termination,Reasonable
+Company can terminate without notice. (variation 80),High,Termination,Unfair
+Termination requires 60 days notice. (variation 81),Low,Termination,Reasonable
+Company can terminate without notice. (variation 82),High,Termination,Unfair
+Full liability accepted by vendor. (variation 83),Low,Liability,Favorable to client
+Payment due within 30 days. (variation 84),Low,Payment,Standard terms
+Flexible payment options available. (variation 85),Low,Payment,User-friendly
+Data encrypted at rest. (variation 86),Low,Privacy,Secure
+Termination penalty applies. (variation 87),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 88),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 89),High,Termination,Unfair
+Late fee of 5% per month. (variation 90),Medium,Payment,High penalty
+Data encrypted at rest. (variation 91),Low,Privacy,Secure
+Flexible payment options available. (variation 92),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 93),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 94),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 95),Medium,Liability,Partial limitation
+Data anonymized. (variation 96),Low,Privacy,Privacy preserved
+Company can terminate without notice. (variation 97),High,Termination,Unfair
+Termination requires 60 days notice. (variation 98),Low,Termination,Reasonable
+Termination penalty applies. (variation 99),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 100),Low,Termination,Reasonable
+Company can terminate without notice. (variation 101),High,Termination,Unfair
+Client data shared with third parties. (variation 102),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 103),Medium,Termination,Lock-in risk
+Termination requires 60 days notice. (variation 104),Low,Termination,Reasonable
+Payment due within 30 days. (variation 105),Low,Payment,Standard terms
+Data anonymized. (variation 106),Low,Privacy,Privacy preserved
+Flexible payment options available. (variation 107),Low,Payment,User-friendly
+Vendor liable only for direct damages. (variation 108),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 109),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 110),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 111),Medium,Payment,High penalty
+Vendor is not liable for indirect damages. (variation 112),High,Liability,Removes accountability
+Client data shared with third parties. (variation 113),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 114),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 115),High,Termination,Unfair
+Flexible payment options available. (variation 116),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 117),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 118),High,Termination,Financial burden
+Vendor is not liable for indirect damages. (variation 119),High,Liability,Removes accountability
+Vendor is not liable for indirect damages. (variation 120),High,Liability,Removes accountability
+Data anonymized. (variation 121),Low,Privacy,Privacy preserved
+Data anonymized. (variation 122),Low,Privacy,Privacy preserved
+Data anonymized. (variation 123),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 124),High,Liability,Removes accountability
+Liability is capped at total fees paid. (variation 125),High,Liability,Limits compensation
+Full liability accepted by vendor. (variation 126),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 127),Low,Privacy,Secure
+Data anonymized. (variation 128),Low,Privacy,Privacy preserved
+Late fee of 5% per month. (variation 129),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 130),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 131),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 132),High,Liability,Limits compensation
+Flexible payment options available. (variation 133),Low,Payment,User-friendly
+Vendor is not liable for indirect damages. (variation 134),High,Liability,Removes accountability
+User activity tracked. (variation 135),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 136),Low,Privacy,Secure
+Flexible payment options available. (variation 137),Low,Payment,User-friendly
+Company can terminate without notice. (variation 138),High,Termination,Unfair
+Termination penalty applies. (variation 139),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 140),Low,Termination,Reasonable
+Company may change pricing anytime. (variation 141),High,Payment,Unpredictable costs
+Data encrypted at rest. (variation 142),Low,Privacy,Secure
+Full liability accepted by vendor. (variation 143),Low,Liability,Favorable to client
+Client data shared with third parties. (variation 144),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 145),High,Termination,Unfair
+Payment due within 30 days. (variation 146),Low,Payment,Standard terms
+Vendor is not liable for indirect damages. (variation 147),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 148),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 149),Medium,Payment,High penalty
+Full liability accepted by vendor. (variation 150),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 151),Low,Privacy,Secure
+Flexible payment options available. (variation 152),Low,Payment,User-friendly
+Payment due within 30 days. (variation 153),Low,Payment,Standard terms
+User activity tracked. (variation 154),Medium,Privacy,Tracking concern
+Client data shared with third parties. (variation 155),High,Privacy,Privacy risk
+User activity tracked. (variation 156),Medium,Privacy,Tracking concern
+Company may change pricing anytime. (variation 157),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 158),High,Liability,Limits compensation
+User activity tracked. (variation 159),Medium,Privacy,Tracking concern
+User activity tracked. (variation 160),Medium,Privacy,Tracking concern
+Company can terminate without notice. (variation 161),High,Termination,Unfair
+Termination requires 60 days notice. (variation 162),Low,Termination,Reasonable
+Flexible payment options available. (variation 163),Low,Payment,User-friendly
+Company can terminate without notice. (variation 164),High,Termination,Unfair
+Payment due within 30 days. (variation 165),Low,Payment,Standard terms
+Vendor is not liable for indirect damages. (variation 166),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 167),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 168),High,Termination,Unfair
+Data anonymized. (variation 169),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 170),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 171),Low,Liability,Favorable to client
+Data anonymized. (variation 172),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 173),High,Liability,Removes accountability
+Termination requires 60 days notice. (variation 174),Low,Termination,Reasonable
+Liability is capped at total fees paid. (variation 175),High,Liability,Limits compensation
+Flexible payment options available. (variation 176),Low,Payment,User-friendly
+Flexible payment options available. (variation 177),Low,Payment,User-friendly
+Termination penalty applies. (variation 178),High,Termination,Financial burden
+Payment due within 30 days. (variation 179),Low,Payment,Standard terms
+Vendor is not liable for indirect damages. (variation 180),High,Liability,Removes accountability
+Data anonymized. (variation 181),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 182),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 183),High,Liability,Removes accountability
+User activity tracked. (variation 184),Medium,Privacy,Tracking concern
+Termination requires 60 days notice. (variation 185),Low,Termination,Reasonable
+Flexible payment options available. (variation 186),Low,Payment,User-friendly
+User activity tracked. (variation 187),Medium,Privacy,Tracking concern
+Vendor liable only for direct damages. (variation 188),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 189),High,Termination,Unfair
+Company can terminate without notice. (variation 190),High,Termination,Unfair
+Late fee of 5% per month. (variation 191),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 192),High,Payment,Unpredictable costs
+Full liability accepted by vendor. (variation 193),Low,Liability,Favorable to client
+User activity tracked. (variation 194),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 195),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 196),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 197),High,Liability,Removes accountability
+Late fee of 5% per month. (variation 198),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 199),Medium,Payment,High penalty
+Vendor liable only for direct damages. (variation 200),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 201),High,Liability,Limits compensation
+Contract auto-renews annually. (variation 202),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 203),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 204),Low,Liability,Favorable to client
+Payment due within 30 days. (variation 205),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 206),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 207),High,Liability,Removes accountability
+Vendor liable only for direct damages. (variation 208),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 209),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 210),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 211),Medium,Payment,High penalty
+Client data shared with third parties. (variation 212),High,Privacy,Privacy risk
+Termination requires 60 days notice. (variation 213),Low,Termination,Reasonable
+Company can terminate without notice. (variation 214),High,Termination,Unfair
+Termination penalty applies. (variation 215),High,Termination,Financial burden
+Vendor is not liable for indirect damages. (variation 216),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 217),Low,Liability,Favorable to client
+Data anonymized. (variation 218),Low,Privacy,Privacy preserved
+Data encrypted at rest. (variation 219),Low,Privacy,Secure
+Company can terminate without notice. (variation 220),High,Termination,Unfair
+Payment due within 30 days. (variation 221),Low,Payment,Standard terms
+Company can terminate without notice. (variation 222),High,Termination,Unfair
+Data anonymized. (variation 223),Low,Privacy,Privacy preserved
+Termination penalty applies. (variation 224),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 225),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 226),Low,Termination,Reasonable
+Data anonymized. (variation 227),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 228),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 229),Low,Payment,Standard terms
+Data anonymized. (variation 230),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 231),Low,Payment,Standard terms
+Client data shared with third parties. (variation 232),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 233),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 234),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 235),High,Payment,Unpredictable costs
+Flexible payment options available. (variation 236),Low,Payment,User-friendly
+Vendor is not liable for indirect damages. (variation 237),High,Liability,Removes accountability
+Flexible payment options available. (variation 238),Low,Payment,User-friendly
+Vendor liable only for direct damages. (variation 239),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 240),High,Termination,Unfair
+User activity tracked. (variation 241),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 242),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 243),Low,Privacy,Secure
+Termination penalty applies. (variation 244),High,Termination,Financial burden
+Data encrypted at rest. (variation 245),Low,Privacy,Secure
+Payment due within 30 days. (variation 246),Low,Payment,Standard terms
+Company can terminate without notice. (variation 247),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 248),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 249),High,Payment,Unpredictable costs
+User activity tracked. (variation 250),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 251),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 252),High,Termination,Unfair
+Company can terminate without notice. (variation 253),High,Termination,Unfair
+Data encrypted at rest. (variation 254),Low,Privacy,Secure
+Data encrypted at rest. (variation 255),Low,Privacy,Secure
+Data anonymized. (variation 256),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 257),High,Liability,Removes accountability
+Late fee of 5% per month. (variation 258),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 259),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 260),Medium,Termination,Lock-in risk
+Data anonymized. (variation 261),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 262),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 263),High,Termination,Financial burden
+Payment due within 30 days. (variation 264),Low,Payment,Standard terms
+Contract auto-renews annually. (variation 265),Medium,Termination,Lock-in risk
+Late fee of 5% per month. (variation 266),Medium,Payment,High penalty
+Payment due within 30 days. (variation 267),Low,Payment,Standard terms
+Client data shared with third parties. (variation 268),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 269),High,Termination,Unfair
+Vendor liable only for direct damages. (variation 270),Medium,Liability,Partial limitation
+Vendor liable only for direct damages. (variation 271),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 272),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 273),Medium,Liability,Partial limitation
+Late fee of 5% per month. (variation 274),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 275),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 276),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 277),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 278),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 279),High,Liability,Limits compensation
+Contract auto-renews annually. (variation 280),Medium,Termination,Lock-in risk
+Full liability accepted by vendor. (variation 281),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 282),Low,Termination,Reasonable
+Company may change pricing anytime. (variation 283),High,Payment,Unpredictable costs
+User activity tracked. (variation 284),Medium,Privacy,Tracking concern
+Flexible payment options available. (variation 285),Low,Payment,User-friendly
+Liability is capped at total fees paid. (variation 286),High,Liability,Limits compensation
+Full liability accepted by vendor. (variation 287),Low,Liability,Favorable to client
+Data anonymized. (variation 288),Low,Privacy,Privacy preserved
+Flexible payment options available. (variation 289),Low,Payment,User-friendly
+Company can terminate without notice. (variation 290),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 291),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 292),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 293),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 294),High,Payment,Unpredictable costs
+Full liability accepted by vendor. (variation 295),Low,Liability,Favorable to client
+Full liability accepted by vendor. (variation 296),Low,Liability,Favorable to client
+Full liability accepted by vendor. (variation 297),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 298),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 299),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 300),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 301),High,Privacy,Privacy risk
+Data anonymized. (variation 302),Low,Privacy,Privacy preserved
+Termination penalty applies. (variation 303),High,Termination,Financial burden
+Flexible payment options available. (variation 304),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 305),Low,Liability,Favorable to client
+User activity tracked. (variation 306),Medium,Privacy,Tracking concern
+Vendor liable only for direct damages. (variation 307),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 308),Low,Liability,Favorable to client
+Contract auto-renews annually. (variation 309),Medium,Termination,Lock-in risk
+Late fee of 5% per month. (variation 310),Medium,Payment,High penalty
+Full liability accepted by vendor. (variation 311),Low,Liability,Favorable to client
+Data anonymized. (variation 312),Low,Privacy,Privacy preserved
+Late fee of 5% per month. (variation 313),Medium,Payment,High penalty
+Termination penalty applies. (variation 314),High,Termination,Financial burden
+Company can terminate without notice. (variation 315),High,Termination,Unfair
+Full liability accepted by vendor. (variation 316),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 317),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 318),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 319),Low,Termination,Reasonable
+Vendor liable only for direct damages. (variation 320),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 321),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 322),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 323),High,Liability,Limits compensation
+Termination penalty applies. (variation 324),High,Termination,Financial burden
+Company can terminate without notice. (variation 325),High,Termination,Unfair
+Late fee of 5% per month. (variation 326),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 327),High,Liability,Limits compensation
+User activity tracked. (variation 328),Medium,Privacy,Tracking concern
+Vendor liable only for direct damages. (variation 329),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 330),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 331),Low,Liability,Favorable to client
+Company may change pricing anytime. (variation 332),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 333),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 334),Medium,Payment,High penalty
+Termination penalty applies. (variation 335),High,Termination,Financial burden
+Data encrypted at rest. (variation 336),Low,Privacy,Secure
+Payment due within 30 days. (variation 337),Low,Payment,Standard terms
+Termination penalty applies. (variation 338),High,Termination,Financial burden
+Late fee of 5% per month. (variation 339),Medium,Payment,High penalty
+Data encrypted at rest. (variation 340),Low,Privacy,Secure
+Data encrypted at rest. (variation 341),Low,Privacy,Secure
+User activity tracked. (variation 342),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 343),High,Termination,Financial burden
+Data encrypted at rest. (variation 344),Low,Privacy,Secure
+Termination requires 60 days notice. (variation 345),Low,Termination,Reasonable
+Flexible payment options available. (variation 346),Low,Payment,User-friendly
+Client data shared with third parties. (variation 347),High,Privacy,Privacy risk
+Vendor is not liable for indirect damages. (variation 348),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 349),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 350),High,Termination,Unfair
+Termination requires 60 days notice. (variation 351),Low,Termination,Reasonable
+Data anonymized. (variation 352),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 353),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 354),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 355),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 356),Medium,Payment,High penalty
+Termination penalty applies. (variation 357),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 358),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 359),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 360),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 361),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 362),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 363),Medium,Termination,Lock-in risk
+Company may change pricing anytime. (variation 364),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 365),High,Termination,Unfair
+Data encrypted at rest. (variation 366),Low,Privacy,Secure
+User activity tracked. (variation 367),Medium,Privacy,Tracking concern
+Vendor is not liable for indirect damages. (variation 368),High,Liability,Removes accountability
+Data encrypted at rest. (variation 369),Low,Privacy,Secure
+User activity tracked. (variation 370),Medium,Privacy,Tracking concern
+Client data shared with third parties. (variation 371),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 372),High,Payment,Unpredictable costs
+Flexible payment options available. (variation 373),Low,Payment,User-friendly
+Termination penalty applies. (variation 374),High,Termination,Financial burden
+Data anonymized. (variation 375),Low,Privacy,Privacy preserved
+Company can terminate without notice. (variation 376),High,Termination,Unfair
+Company may change pricing anytime. (variation 377),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 378),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 379),High,Privacy,Privacy risk
+Liability is capped at total fees paid. (variation 380),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 381),Medium,Payment,High penalty
+Client data shared with third parties. (variation 382),High,Privacy,Privacy risk
+Termination penalty applies. (variation 383),High,Termination,Financial burden
+Company may change pricing anytime. (variation 384),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 385),Medium,Liability,Partial limitation
+Vendor liable only for direct damages. (variation 386),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 387),Low,Termination,Reasonable
+Vendor liable only for direct damages. (variation 388),Medium,Liability,Partial limitation
+Data encrypted at rest. (variation 389),Low,Privacy,Secure
+Flexible payment options available. (variation 390),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 391),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 392),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 393),High,Liability,Removes accountability
+Liability is capped at total fees paid. (variation 394),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 395),Medium,Payment,High penalty
+Flexible payment options available. (variation 396),Low,Payment,User-friendly
+Company can terminate without notice. (variation 397),High,Termination,Unfair
+Client data shared with third parties. (variation 398),High,Privacy,Privacy risk
+Data anonymized. (variation 399),Low,Privacy,Privacy preserved
+Data anonymized. (variation 400),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 401),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 402),Medium,Payment,High penalty
+Flexible payment options available. (variation 403),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 404),Medium,Payment,High penalty
+Vendor is not liable for indirect damages. (variation 405),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 406),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 407),Low,Payment,Standard terms
+Full liability accepted by vendor. (variation 408),Low,Liability,Favorable to client
+Payment due within 30 days. (variation 409),Low,Payment,Standard terms
+Payment due within 30 days. (variation 410),Low,Payment,Standard terms
+Flexible payment options available. (variation 411),Low,Payment,User-friendly
+Liability is capped at total fees paid. (variation 412),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 413),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 414),Low,Payment,Standard terms
+Flexible payment options available. (variation 415),Low,Payment,User-friendly
+Company can terminate without notice. (variation 416),High,Termination,Unfair
+Company may change pricing anytime. (variation 417),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 418),High,Privacy,Privacy risk
+Termination requires 60 days notice. (variation 419),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 420),Low,Liability,Favorable to client
+Flexible payment options available. (variation 421),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 422),Low,Liability,Favorable to client
+Flexible payment options available. (variation 423),Low,Payment,User-friendly
+Data encrypted at rest. (variation 424),Low,Privacy,Secure
+Contract auto-renews annually. (variation 425),Medium,Termination,Lock-in risk
+User activity tracked. (variation 426),Medium,Privacy,Tracking concern
+Company can terminate without notice. (variation 427),High,Termination,Unfair
+Payment due within 30 days. (variation 428),Low,Payment,Standard terms
+User activity tracked. (variation 429),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 430),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 431),High,Termination,Unfair
+Late fee of 5% per month. (variation 432),Medium,Payment,High penalty
+Termination requires 60 days notice. (variation 433),Low,Termination,Reasonable
+Flexible payment options available. (variation 434),Low,Payment,User-friendly
+Vendor liable only for direct damages. (variation 435),Medium,Liability,Partial limitation
+Vendor liable only for direct damages. (variation 436),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 437),Low,Payment,User-friendly
+Payment due within 30 days. (variation 438),Low,Payment,Standard terms
+Data encrypted at rest. (variation 439),Low,Privacy,Secure
+Client data shared with third parties. (variation 440),High,Privacy,Privacy risk
+Flexible payment options available. (variation 441),Low,Payment,User-friendly
+Termination penalty applies. (variation 442),High,Termination,Financial burden
+Contract auto-renews annually. (variation 443),Medium,Termination,Lock-in risk
+Full liability accepted by vendor. (variation 444),Low,Liability,Favorable to client
+Data anonymized. (variation 445),Low,Privacy,Privacy preserved
+Data encrypted at rest. (variation 446),Low,Privacy,Secure
+Flexible payment options available. (variation 447),Low,Payment,User-friendly
+Client data shared with third parties. (variation 448),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 449),High,Termination,Unfair
+Client data shared with third parties. (variation 450),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 451),High,Privacy,Privacy risk
+Data anonymized. (variation 452),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 453),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 454),Low,Privacy,Secure
+Company can terminate without notice. (variation 455),High,Termination,Unfair
+Late fee of 5% per month. (variation 456),Medium,Payment,High penalty
+Company can terminate without notice. (variation 457),High,Termination,Unfair
+Termination requires 60 days notice. (variation 458),Low,Termination,Reasonable
+Vendor liable only for direct damages. (variation 459),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 460),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 461),Medium,Termination,Lock-in risk
+Data anonymized. (variation 462),Low,Privacy,Privacy preserved
+Company may change pricing anytime. (variation 463),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 464),High,Termination,Unfair
+Company may change pricing anytime. (variation 465),High,Payment,Unpredictable costs
+Flexible payment options available. (variation 466),Low,Payment,User-friendly
+User activity tracked. (variation 467),Medium,Privacy,Tracking concern
+Data anonymized. (variation 468),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 469),Low,Liability,Favorable to client
+Company can terminate without notice. (variation 470),High,Termination,Unfair
+Company may change pricing anytime. (variation 471),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 472),Low,Termination,Reasonable
+Termination penalty applies. (variation 473),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 474),Medium,Liability,Partial limitation
+Late fee of 5% per month. (variation 475),Medium,Payment,High penalty
+Data anonymized. (variation 476),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 477),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 478),Low,Termination,Reasonable
+Data anonymized. (variation 479),Low,Privacy,Privacy preserved
+User activity tracked. (variation 480),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 481),Low,Payment,Standard terms
+Full liability accepted by vendor. (variation 482),Low,Liability,Favorable to client
+Contract auto-renews annually. (variation 483),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 484),High,Liability,Removes accountability
+Flexible payment options available. (variation 485),Low,Payment,User-friendly
+Data anonymized. (variation 486),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 487),Low,Liability,Favorable to client
+Late fee of 5% per month. (variation 488),Medium,Payment,High penalty
+Company can terminate without notice. (variation 489),High,Termination,Unfair
+Full liability accepted by vendor. (variation 490),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 491),Low,Privacy,Secure
+Data encrypted at rest. (variation 492),Low,Privacy,Secure
+Data anonymized. (variation 493),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 494),Low,Liability,Favorable to client
+Vendor is not liable for indirect damages. (variation 495),High,Liability,Removes accountability
+Company can terminate without notice. (variation 496),High,Termination,Unfair
+Data encrypted at rest. (variation 497),Low,Privacy,Secure
+User activity tracked. (variation 498),Medium,Privacy,Tracking concern
+Client data shared with third parties. (variation 499),High,Privacy,Privacy risk
+Payment due within 30 days. (variation 500),Low,Payment,Standard terms
+Flexible payment options available. (variation 501),Low,Payment,User-friendly
+User activity tracked. (variation 502),Medium,Privacy,Tracking concern
+User activity tracked. (variation 503),Medium,Privacy,Tracking concern
+Company can terminate without notice. (variation 504),High,Termination,Unfair
+Payment due within 30 days. (variation 505),Low,Payment,Standard terms
+Data anonymized. (variation 506),Low,Privacy,Privacy preserved
+Liability is capped at total fees paid. (variation 507),High,Liability,Limits compensation
+Company can terminate without notice. (variation 508),High,Termination,Unfair
+Payment due within 30 days. (variation 509),Low,Payment,Standard terms
+Termination penalty applies. (variation 510),High,Termination,Financial burden
+Company can terminate without notice. (variation 511),High,Termination,Unfair
+Flexible payment options available. (variation 512),Low,Payment,User-friendly
+Vendor liable only for direct damages. (variation 513),Medium,Liability,Partial limitation
+Client data shared with third parties. (variation 514),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 515),Medium,Termination,Lock-in risk
+Termination requires 60 days notice. (variation 516),Low,Termination,Reasonable
+Termination requires 60 days notice. (variation 517),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 518),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 519),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 520),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 521),Medium,Liability,Partial limitation
+Data anonymized. (variation 522),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 523),Medium,Termination,Lock-in risk
+Contract auto-renews annually. (variation 524),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 525),High,Termination,Unfair
+Payment due within 30 days. (variation 526),Low,Payment,Standard terms
+Contract auto-renews annually. (variation 527),Medium,Termination,Lock-in risk
+Full liability accepted by vendor. (variation 528),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 529),Low,Termination,Reasonable
+Data encrypted at rest. (variation 530),Low,Privacy,Secure
+Company may change pricing anytime. (variation 531),High,Payment,Unpredictable costs
+Full liability accepted by vendor. (variation 532),Low,Liability,Favorable to client
+Late fee of 5% per month. (variation 533),Medium,Payment,High penalty
+Payment due within 30 days. (variation 534),Low,Payment,Standard terms
+Client data shared with third parties. (variation 535),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 536),High,Privacy,Privacy risk
+Payment due within 30 days. (variation 537),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 538),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 539),Low,Payment,User-friendly
+Client data shared with third parties. (variation 540),High,Privacy,Privacy risk
+Vendor is not liable for indirect damages. (variation 541),High,Liability,Removes accountability
+Liability is capped at total fees paid. (variation 542),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 543),High,Payment,Unpredictable costs
+Data anonymized. (variation 544),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 545),Low,Termination,Reasonable
+Company may change pricing anytime. (variation 546),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 547),Medium,Payment,High penalty
+Payment due within 30 days. (variation 548),Low,Payment,Standard terms
+Termination penalty applies. (variation 549),High,Termination,Financial burden
+Data encrypted at rest. (variation 550),Low,Privacy,Secure
+Termination penalty applies. (variation 551),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 552),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 553),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 554),Low,Termination,Reasonable
+Data anonymized. (variation 555),Low,Privacy,Privacy preserved
+Client data shared with third parties. (variation 556),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 557),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 558),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 559),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 560),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 561),High,Liability,Limits compensation
+Full liability accepted by vendor. (variation 562),Low,Liability,Favorable to client
+Data anonymized. (variation 563),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 564),High,Liability,Removes accountability
+Vendor liable only for direct damages. (variation 565),Medium,Liability,Partial limitation
+User activity tracked. (variation 566),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 567),Low,Liability,Favorable to client
+Full liability accepted by vendor. (variation 568),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 569),Low,Privacy,Secure
+Termination penalty applies. (variation 570),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 571),Low,Termination,Reasonable
+Company can terminate without notice. (variation 572),High,Termination,Unfair
+Contract auto-renews annually. (variation 573),Medium,Termination,Lock-in risk
+Contract auto-renews annually. (variation 574),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 575),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 576),High,Liability,Limits compensation
+Client data shared with third parties. (variation 577),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 578),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 579),Low,Payment,Standard terms
+Full liability accepted by vendor. (variation 580),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 581),Low,Termination,Reasonable
+Contract auto-renews annually. (variation 582),Medium,Termination,Lock-in risk
+Company may change pricing anytime. (variation 583),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 584),High,Liability,Limits compensation
+Company can terminate without notice. (variation 585),High,Termination,Unfair
+Full liability accepted by vendor. (variation 586),Low,Liability,Favorable to client
+Company may change pricing anytime. (variation 587),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 588),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 589),Medium,Payment,High penalty
+Vendor liable only for direct damages. (variation 590),Medium,Liability,Partial limitation
+Client data shared with third parties. (variation 591),High,Privacy,Privacy risk
+Vendor is not liable for indirect damages. (variation 592),High,Liability,Removes accountability
+Termination penalty applies. (variation 593),High,Termination,Financial burden
+Late fee of 5% per month. (variation 594),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 595),Medium,Termination,Lock-in risk
+Contract auto-renews annually. (variation 596),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 597),Medium,Liability,Partial limitation
+Termination penalty applies. (variation 598),High,Termination,Financial burden
+Payment due within 30 days. (variation 599),Low,Payment,Standard terms
+Vendor is not liable for indirect damages. (variation 600),High,Liability,Removes accountability
+Flexible payment options available. (variation 601),Low,Payment,User-friendly
+Client data shared with third parties. (variation 602),High,Privacy,Privacy risk
+User activity tracked. (variation 603),Medium,Privacy,Tracking concern
+Data anonymized. (variation 604),Low,Privacy,Privacy preserved
+Company can terminate without notice. (variation 605),High,Termination,Unfair
+Vendor is not liable for indirect damages. (variation 606),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 607),Medium,Termination,Lock-in risk
+Termination requires 60 days notice. (variation 608),Low,Termination,Reasonable
+User activity tracked. (variation 609),Medium,Privacy,Tracking concern
+User activity tracked. (variation 610),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 611),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 612),High,Liability,Limits compensation
+Client data shared with third parties. (variation 613),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 614),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 615),High,Liability,Removes accountability
+Data encrypted at rest. (variation 616),Low,Privacy,Secure
+Data encrypted at rest. (variation 617),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 618),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 619),High,Liability,Limits compensation
+Company can terminate without notice. (variation 620),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 621),High,Liability,Limits compensation
+Contract auto-renews annually. (variation 622),Medium,Termination,Lock-in risk
+Late fee of 5% per month. (variation 623),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 624),High,Payment,Unpredictable costs
+User activity tracked. (variation 625),Medium,Privacy,Tracking concern
+Data anonymized. (variation 626),Low,Privacy,Privacy preserved
+Flexible payment options available. (variation 627),Low,Payment,User-friendly
+Data encrypted at rest. (variation 628),Low,Privacy,Secure
+Late fee of 5% per month. (variation 629),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 630),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 631),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 632),Low,Liability,Favorable to client
+Termination penalty applies. (variation 633),High,Termination,Financial burden
+Termination penalty applies. (variation 634),High,Termination,Financial burden
+Company can terminate without notice. (variation 635),High,Termination,Unfair
+Vendor liable only for direct damages. (variation 636),Medium,Liability,Partial limitation
+Termination penalty applies. (variation 637),High,Termination,Financial burden
+Data anonymized. (variation 638),Low,Privacy,Privacy preserved
+Late fee of 5% per month. (variation 639),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 640),Medium,Termination,Lock-in risk
+User activity tracked. (variation 641),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 642),Low,Liability,Favorable to client
+Data anonymized. (variation 643),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 644),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 645),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 646),High,Payment,Unpredictable costs
+Data encrypted at rest. (variation 647),Low,Privacy,Secure
+Client data shared with third parties. (variation 648),High,Privacy,Privacy risk
+Termination penalty applies. (variation 649),High,Termination,Financial burden
+Data encrypted at rest. (variation 650),Low,Privacy,Secure
+Company may change pricing anytime. (variation 651),High,Payment,Unpredictable costs
+Contract auto-renews annually. (variation 652),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 653),High,Termination,Financial burden
+Payment due within 30 days. (variation 654),Low,Payment,Standard terms
+Termination penalty applies. (variation 655),High,Termination,Financial burden
+Company can terminate without notice. (variation 656),High,Termination,Unfair
+Contract auto-renews annually. (variation 657),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 658),Low,Payment,Standard terms
+User activity tracked. (variation 659),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 660),High,Termination,Financial burden
+Vendor is not liable for indirect damages. (variation 661),High,Liability,Removes accountability
+User activity tracked. (variation 662),Medium,Privacy,Tracking concern
+Liability is capped at total fees paid. (variation 663),High,Liability,Limits compensation
+Data anonymized. (variation 664),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 665),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 666),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 667),Medium,Payment,High penalty
+Full liability accepted by vendor. (variation 668),Low,Liability,Favorable to client
+Contract auto-renews annually. (variation 669),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 670),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 671),High,Privacy,Privacy risk
+Payment due within 30 days. (variation 672),Low,Payment,Standard terms
+Termination penalty applies. (variation 673),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 674),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 675),High,Termination,Unfair
+Vendor liable only for direct damages. (variation 676),Medium,Liability,Partial limitation
+Vendor liable only for direct damages. (variation 677),Medium,Liability,Partial limitation
+User activity tracked. (variation 678),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 679),Low,Payment,Standard terms
+Company can terminate without notice. (variation 680),High,Termination,Unfair
+Vendor liable only for direct damages. (variation 681),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 682),Low,Payment,User-friendly
+Client data shared with third parties. (variation 683),High,Privacy,Privacy risk
+Data anonymized. (variation 684),Low,Privacy,Privacy preserved
+Client data shared with third parties. (variation 685),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 686),High,Termination,Unfair
+Company may change pricing anytime. (variation 687),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 688),High,Termination,Financial burden
+Contract auto-renews annually. (variation 689),Medium,Termination,Lock-in risk
+Data anonymized. (variation 690),Low,Privacy,Privacy preserved
+Company may change pricing anytime. (variation 691),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 692),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 693),High,Termination,Financial burden
+Termination penalty applies. (variation 694),High,Termination,Financial burden
+Late fee of 5% per month. (variation 695),Medium,Payment,High penalty
+Full liability accepted by vendor. (variation 696),Low,Liability,Favorable to client
+Vendor is not liable for indirect damages. (variation 697),High,Liability,Removes accountability
+Late fee of 5% per month. (variation 698),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 699),Medium,Payment,High penalty
+Flexible payment options available. (variation 700),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 701),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 702),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 703),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 704),High,Liability,Removes accountability
+User activity tracked. (variation 705),Medium,Privacy,Tracking concern
+User activity tracked. (variation 706),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 707),Low,Liability,Favorable to client
+User activity tracked. (variation 708),Medium,Privacy,Tracking concern
+Data anonymized. (variation 709),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 710),Low,Payment,Standard terms
+Client data shared with third parties. (variation 711),High,Privacy,Privacy risk
+Data encrypted at rest. (variation 712),Low,Privacy,Secure
+Data anonymized. (variation 713),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 714),High,Liability,Removes accountability
+Late fee of 5% per month. (variation 715),Medium,Payment,High penalty
+Data anonymized. (variation 716),Low,Privacy,Privacy preserved
+Late fee of 5% per month. (variation 717),Medium,Payment,High penalty
+User activity tracked. (variation 718),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 719),Low,Privacy,Secure
+Client data shared with third parties. (variation 720),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 721),High,Payment,Unpredictable costs
+Data anonymized. (variation 722),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 723),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 724),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 725),Low,Payment,Standard terms
+Data anonymized. (variation 726),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 727),Medium,Termination,Lock-in risk
+Company may change pricing anytime. (variation 728),High,Payment,Unpredictable costs
+Contract auto-renews annually. (variation 729),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 730),High,Termination,Unfair
+Payment due within 30 days. (variation 731),Low,Payment,Standard terms
+Data encrypted at rest. (variation 732),Low,Privacy,Secure
+Full liability accepted by vendor. (variation 733),Low,Liability,Favorable to client
+Data anonymized. (variation 734),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 735),Low,Termination,Reasonable
+Vendor liable only for direct damages. (variation 736),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 737),Low,Payment,Standard terms
+Termination penalty applies. (variation 738),High,Termination,Financial burden
+Data anonymized. (variation 739),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 740),High,Liability,Removes accountability
+Client data shared with third parties. (variation 741),High,Privacy,Privacy risk
+Vendor is not liable for indirect damages. (variation 742),High,Liability,Removes accountability
+Flexible payment options available. (variation 743),Low,Payment,User-friendly
+Company can terminate without notice. (variation 744),High,Termination,Unfair
+Termination penalty applies. (variation 745),High,Termination,Financial burden
+Contract auto-renews annually. (variation 746),Medium,Termination,Lock-in risk
+Full liability accepted by vendor. (variation 747),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 748),Low,Privacy,Secure
+Data encrypted at rest. (variation 749),Low,Privacy,Secure
+User activity tracked. (variation 750),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 751),Medium,Termination,Lock-in risk
+Late fee of 5% per month. (variation 752),Medium,Payment,High penalty
+Flexible payment options available. (variation 753),Low,Payment,User-friendly
+Client data shared with third parties. (variation 754),High,Privacy,Privacy risk
+Termination penalty applies. (variation 755),High,Termination,Financial burden
+Data anonymized. (variation 756),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 757),Low,Liability,Favorable to client
+Company may change pricing anytime. (variation 758),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 759),High,Liability,Limits compensation
+Data encrypted at rest. (variation 760),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 761),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 762),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 763),High,Termination,Financial burden
+Data anonymized. (variation 764),Low,Privacy,Privacy preserved
+Company can terminate without notice. (variation 765),High,Termination,Unfair
+Client data shared with third parties. (variation 766),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 767),High,Termination,Unfair
+Company may change pricing anytime. (variation 768),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 769),High,Termination,Unfair
+User activity tracked. (variation 770),Medium,Privacy,Tracking concern
+Vendor liable only for direct damages. (variation 771),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 772),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 773),Medium,Termination,Lock-in risk
+Late fee of 5% per month. (variation 774),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 775),Medium,Termination,Lock-in risk
+Termination requires 60 days notice. (variation 776),Low,Termination,Reasonable
+Payment due within 30 days. (variation 777),Low,Payment,Standard terms
+Client data shared with third parties. (variation 778),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 779),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 780),Medium,Termination,Lock-in risk
+Termination requires 60 days notice. (variation 781),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 782),Low,Liability,Favorable to client
+Late fee of 5% per month. (variation 783),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 784),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 785),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 786),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 787),High,Liability,Limits compensation
+Full liability accepted by vendor. (variation 788),Low,Liability,Favorable to client
+Flexible payment options available. (variation 789),Low,Payment,User-friendly
+Client data shared with third parties. (variation 790),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 791),High,Privacy,Privacy risk
+User activity tracked. (variation 792),Medium,Privacy,Tracking concern
+Flexible payment options available. (variation 793),Low,Payment,User-friendly
+User activity tracked. (variation 794),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 795),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 796),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 797),High,Liability,Limits compensation
+User activity tracked. (variation 798),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 799),Low,Liability,Favorable to client
+Liability is capped at total fees paid. (variation 800),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 801),Low,Termination,Reasonable
+Termination requires 60 days notice. (variation 802),Low,Termination,Reasonable
+Vendor liable only for direct damages. (variation 803),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 804),Low,Termination,Reasonable
+Flexible payment options available. (variation 805),Low,Payment,User-friendly
+Vendor liable only for direct damages. (variation 806),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 807),High,Liability,Limits compensation
+Company can terminate without notice. (variation 808),High,Termination,Unfair
+Contract auto-renews annually. (variation 809),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 810),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 811),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 812),High,Termination,Financial burden
+Termination penalty applies. (variation 813),High,Termination,Financial burden
+Payment due within 30 days. (variation 814),Low,Payment,Standard terms
+Client data shared with third parties. (variation 815),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 816),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 817),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 818),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 819),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 820),High,Termination,Unfair
+Data anonymized. (variation 821),Low,Privacy,Privacy preserved
+Company can terminate without notice. (variation 822),High,Termination,Unfair
+Late fee of 5% per month. (variation 823),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 824),High,Liability,Limits compensation
+Company can terminate without notice. (variation 825),High,Termination,Unfair
+Client data shared with third parties. (variation 826),High,Privacy,Privacy risk
+Termination penalty applies. (variation 827),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 828),Low,Termination,Reasonable
+Flexible payment options available. (variation 829),Low,Payment,User-friendly
+Data anonymized. (variation 830),Low,Privacy,Privacy preserved
+Flexible payment options available. (variation 831),Low,Payment,User-friendly
+Flexible payment options available. (variation 832),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 833),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 834),Low,Privacy,Secure
+Data encrypted at rest. (variation 835),Low,Privacy,Secure
+Client data shared with third parties. (variation 836),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 837),Medium,Payment,High penalty
+Data encrypted at rest. (variation 838),Low,Privacy,Secure
+Data encrypted at rest. (variation 839),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 840),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 841),Low,Termination,Reasonable
+Data encrypted at rest. (variation 842),Low,Privacy,Secure
+Data encrypted at rest. (variation 843),Low,Privacy,Secure
+Flexible payment options available. (variation 844),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 845),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 846),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 847),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 848),High,Payment,Unpredictable costs
+User activity tracked. (variation 849),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 850),Low,Privacy,Secure
+User activity tracked. (variation 851),Medium,Privacy,Tracking concern
+Data anonymized. (variation 852),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 853),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 854),Low,Liability,Favorable to client
+Contract auto-renews annually. (variation 855),Medium,Termination,Lock-in risk
+Flexible payment options available. (variation 856),Low,Payment,User-friendly
+Vendor is not liable for indirect damages. (variation 857),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 858),Low,Liability,Favorable to client
+Termination penalty applies. (variation 859),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 860),High,Liability,Limits compensation
+Client data shared with third parties. (variation 861),High,Privacy,Privacy risk
+Termination penalty applies. (variation 862),High,Termination,Financial burden
+Company can terminate without notice. (variation 863),High,Termination,Unfair
+Data anonymized. (variation 864),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 865),Low,Payment,Standard terms
+Flexible payment options available. (variation 866),Low,Payment,User-friendly
+Payment due within 30 days. (variation 867),Low,Payment,Standard terms
+Termination penalty applies. (variation 868),High,Termination,Financial burden
+Company may change pricing anytime. (variation 869),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 870),Medium,Liability,Partial limitation
+Termination penalty applies. (variation 871),High,Termination,Financial burden
+Payment due within 30 days. (variation 872),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 873),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 874),Low,Termination,Reasonable
+Termination penalty applies. (variation 875),High,Termination,Financial burden
+Data anonymized. (variation 876),Low,Privacy,Privacy preserved
+User activity tracked. (variation 877),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 878),High,Termination,Financial burden
+Contract auto-renews annually. (variation 879),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 880),High,Liability,Limits compensation
+Data anonymized. (variation 881),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 882),Medium,Liability,Partial limitation
+Late fee of 5% per month. (variation 883),Medium,Payment,High penalty
+Data anonymized. (variation 884),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 885),Medium,Liability,Partial limitation
+Client data shared with third parties. (variation 886),High,Privacy,Privacy risk
+Liability is capped at total fees paid. (variation 887),High,Liability,Limits compensation
+Company can terminate without notice. (variation 888),High,Termination,Unfair
+Data anonymized. (variation 889),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 890),Low,Payment,Standard terms
+Termination requires 60 days notice. (variation 891),Low,Termination,Reasonable
+Company may change pricing anytime. (variation 892),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 893),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 894),High,Liability,Limits compensation
+Payment due within 30 days. (variation 895),Low,Payment,Standard terms
+Termination penalty applies. (variation 896),High,Termination,Financial burden
+Full liability accepted by vendor. (variation 897),Low,Liability,Favorable to client
+Vendor is not liable for indirect damages. (variation 898),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 899),Low,Liability,Favorable to client
+Client data shared with third parties. (variation 900),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 901),High,Termination,Unfair
+Data encrypted at rest. (variation 902),Low,Privacy,Secure
+Company may change pricing anytime. (variation 903),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 904),Medium,Payment,High penalty
+Data anonymized. (variation 905),Low,Privacy,Privacy preserved
+Late fee of 5% per month. (variation 906),Medium,Payment,High penalty
+Termination requires 60 days notice. (variation 907),Low,Termination,Reasonable
+Contract auto-renews annually. (variation 908),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 909),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 910),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 911),Low,Termination,Reasonable
+User activity tracked. (variation 912),Medium,Privacy,Tracking concern
+Company may change pricing anytime. (variation 913),High,Payment,Unpredictable costs
+Data anonymized. (variation 914),Low,Privacy,Privacy preserved
+Liability is capped at total fees paid. (variation 915),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 916),Medium,Payment,High penalty
+Full liability accepted by vendor. (variation 917),Low,Liability,Favorable to client
+Flexible payment options available. (variation 918),Low,Payment,User-friendly
+Vendor is not liable for indirect damages. (variation 919),High,Liability,Removes accountability
+Termination requires 60 days notice. (variation 920),Low,Termination,Reasonable
+Company can terminate without notice. (variation 921),High,Termination,Unfair
+Flexible payment options available. (variation 922),Low,Payment,User-friendly
+User activity tracked. (variation 923),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 924),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 925),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 926),Low,Liability,Favorable to client
+Payment due within 30 days. (variation 927),Low,Payment,Standard terms
+Data encrypted at rest. (variation 928),Low,Privacy,Secure
+Client data shared with third parties. (variation 929),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 930),High,Termination,Unfair
+Late fee of 5% per month. (variation 931),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 932),High,Liability,Limits compensation
+Data encrypted at rest. (variation 933),Low,Privacy,Secure
+Contract auto-renews annually. (variation 934),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 935),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 936),High,Liability,Limits compensation
+Payment due within 30 days. (variation 937),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 938),Medium,Liability,Partial limitation
+User activity tracked. (variation 939),Medium,Privacy,Tracking concern
+Vendor is not liable for indirect damages. (variation 940),High,Liability,Removes accountability
+Data anonymized. (variation 941),Low,Privacy,Privacy preserved
+Data anonymized. (variation 942),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 943),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 944),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 945),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 946),Medium,Liability,Partial limitation
+Vendor liable only for direct damages. (variation 947),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 948),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 949),Low,Termination,Reasonable
+Company can terminate without notice. (variation 950),High,Termination,Unfair
+User activity tracked. (variation 951),Medium,Privacy,Tracking concern
+Late fee of 5% per month. (variation 952),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 953),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 954),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 955),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 956),Low,Liability,Favorable to client
+Company can terminate without notice. (variation 957),High,Termination,Unfair
+Termination requires 60 days notice. (variation 958),Low,Termination,Reasonable
+Flexible payment options available. (variation 959),Low,Payment,User-friendly
+User activity tracked. (variation 960),Medium,Privacy,Tracking concern
+Company can terminate without notice. (variation 961),High,Termination,Unfair
+Data encrypted at rest. (variation 962),Low,Privacy,Secure
+Termination requires 60 days notice. (variation 963),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 964),High,Liability,Removes accountability
+Company can terminate without notice. (variation 965),High,Termination,Unfair
+Data anonymized. (variation 966),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 967),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 968),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 969),High,Liability,Limits compensation
+Data anonymized. (variation 970),Low,Privacy,Privacy preserved
+Data anonymized. (variation 971),Low,Privacy,Privacy preserved
+Flexible payment options available. (variation 972),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 973),Medium,Termination,Lock-in risk
+Flexible payment options available. (variation 974),Low,Payment,User-friendly
+Flexible payment options available. (variation 975),Low,Payment,User-friendly
+User activity tracked. (variation 976),Medium,Privacy,Tracking concern
+Company may change pricing anytime. (variation 977),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 978),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 979),Medium,Liability,Partial limitation
+Client data shared with third parties. (variation 980),High,Privacy,Privacy risk
+Liability is capped at total fees paid. (variation 981),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 982),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 983),Low,Payment,Standard terms
+Data anonymized. (variation 984),Low,Privacy,Privacy preserved
+Data encrypted at rest. (variation 985),Low,Privacy,Secure
+Contract auto-renews annually. (variation 986),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 987),High,Liability,Removes accountability
+Termination penalty applies. (variation 988),High,Termination,Financial burden
+User activity tracked. (variation 989),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 990),Medium,Termination,Lock-in risk
+Company may change pricing anytime. (variation 991),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 992),High,Termination,Unfair
+Payment due within 30 days. (variation 993),Low,Payment,Standard terms
+Data encrypted at rest. (variation 994),Low,Privacy,Secure
+Termination requires 60 days notice. (variation 995),Low,Termination,Reasonable
+Late fee of 5% per month. (variation 996),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 997),Medium,Payment,High penalty
+Payment due within 30 days. (variation 998),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 999),Medium,Liability,Partial limitation
+Data anonymized. (variation 1000),Low,Privacy,Privacy preserved
+Flexible payment options available. (variation 1001),Low,Payment,User-friendly
+Payment due within 30 days. (variation 1002),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1003),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1004),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 1005),High,Privacy,Privacy risk
+Termination requires 60 days notice. (variation 1006),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 1007),High,Liability,Removes accountability
+Termination penalty applies. (variation 1008),High,Termination,Financial burden
+Termination penalty applies. (variation 1009),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1010),Medium,Liability,Partial limitation
+Termination penalty applies. (variation 1011),High,Termination,Financial burden
+Data anonymized. (variation 1012),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 1013),Low,Liability,Favorable to client
+Company may change pricing anytime. (variation 1014),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 1015),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 1016),High,Liability,Limits compensation
+Payment due within 30 days. (variation 1017),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1018),High,Liability,Limits compensation
+Data encrypted at rest. (variation 1019),Low,Privacy,Secure
+Payment due within 30 days. (variation 1020),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 1021),Medium,Payment,High penalty
+Client data shared with third parties. (variation 1022),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 1023),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1024),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1025),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1026),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 1027),High,Payment,Unpredictable costs
+User activity tracked. (variation 1028),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 1029),Low,Payment,Standard terms
+Data encrypted at rest. (variation 1030),Low,Privacy,Secure
+Company can terminate without notice. (variation 1031),High,Termination,Unfair
+Vendor liable only for direct damages. (variation 1032),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 1033),High,Liability,Limits compensation
+Termination penalty applies. (variation 1034),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 1035),Low,Termination,Reasonable
+Payment due within 30 days. (variation 1036),Low,Payment,Standard terms
+User activity tracked. (variation 1037),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 1038),Low,Privacy,Secure
+Contract auto-renews annually. (variation 1039),Medium,Termination,Lock-in risk
+Late fee of 5% per month. (variation 1040),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 1041),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 1042),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 1043),High,Liability,Limits compensation
+Data anonymized. (variation 1044),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 1045),Low,Payment,Standard terms
+Flexible payment options available. (variation 1046),Low,Payment,User-friendly
+Data anonymized. (variation 1047),Low,Privacy,Privacy preserved
+Client data shared with third parties. (variation 1048),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1049),High,Payment,Unpredictable costs
+Flexible payment options available. (variation 1050),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 1051),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 1052),High,Termination,Financial burden
+Client data shared with third parties. (variation 1053),High,Privacy,Privacy risk
+Termination requires 60 days notice. (variation 1054),Low,Termination,Reasonable
+Late fee of 5% per month. (variation 1055),Medium,Payment,High penalty
+Termination penalty applies. (variation 1056),High,Termination,Financial burden
+Termination penalty applies. (variation 1057),High,Termination,Financial burden
+Data encrypted at rest. (variation 1058),Low,Privacy,Secure
+Client data shared with third parties. (variation 1059),High,Privacy,Privacy risk
+Payment due within 30 days. (variation 1060),Low,Payment,Standard terms
+Company can terminate without notice. (variation 1061),High,Termination,Unfair
+Data encrypted at rest. (variation 1062),Low,Privacy,Secure
+Termination penalty applies. (variation 1063),High,Termination,Financial burden
+Client data shared with third parties. (variation 1064),High,Privacy,Privacy risk
+Full liability accepted by vendor. (variation 1065),Low,Liability,Favorable to client
+User activity tracked. (variation 1066),Medium,Privacy,Tracking concern
+Flexible payment options available. (variation 1067),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1068),High,Privacy,Privacy risk
+Flexible payment options available. (variation 1069),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1070),High,Privacy,Privacy risk
+Termination requires 60 days notice. (variation 1071),Low,Termination,Reasonable
+Termination requires 60 days notice. (variation 1072),Low,Termination,Reasonable
+Vendor liable only for direct damages. (variation 1073),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 1074),High,Termination,Unfair
+Company may change pricing anytime. (variation 1075),High,Payment,Unpredictable costs
+Contract auto-renews annually. (variation 1076),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 1077),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 1078),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 1079),Medium,Liability,Partial limitation
+Termination penalty applies. (variation 1080),High,Termination,Financial burden
+Vendor is not liable for indirect damages. (variation 1081),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 1082),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 1083),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1084),High,Liability,Limits compensation
+Termination penalty applies. (variation 1085),High,Termination,Financial burden
+Contract auto-renews annually. (variation 1086),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1087),Low,Payment,Standard terms
+Data encrypted at rest. (variation 1088),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 1089),Medium,Liability,Partial limitation
+Late fee of 5% per month. (variation 1090),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 1091),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 1092),Low,Termination,Reasonable
+Flexible payment options available. (variation 1093),Low,Payment,User-friendly
+Payment due within 30 days. (variation 1094),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 1095),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 1096),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1097),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 1098),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1099),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1100),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 1101),High,Payment,Unpredictable costs
+Flexible payment options available. (variation 1102),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 1103),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 1104),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 1105),High,Liability,Limits compensation
+Termination penalty applies. (variation 1106),High,Termination,Financial burden
+Late fee of 5% per month. (variation 1107),Medium,Payment,High penalty
+Flexible payment options available. (variation 1108),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 1109),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 1110),Low,Termination,Reasonable
+Client data shared with third parties. (variation 1111),High,Privacy,Privacy risk
+Liability is capped at total fees paid. (variation 1112),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 1113),Low,Termination,Reasonable
+Termination penalty applies. (variation 1114),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 1115),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 1116),High,Liability,Removes accountability
+Payment due within 30 days. (variation 1117),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1118),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1119),High,Termination,Unfair
+Company can terminate without notice. (variation 1120),High,Termination,Unfair
+Company can terminate without notice. (variation 1121),High,Termination,Unfair
+Late fee of 5% per month. (variation 1122),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 1123),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 1124),High,Termination,Financial burden
+Client data shared with third parties. (variation 1125),High,Privacy,Privacy risk
+Termination requires 60 days notice. (variation 1126),Low,Termination,Reasonable
+Data anonymized. (variation 1127),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 1128),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 1129),Low,Liability,Favorable to client
+Termination penalty applies. (variation 1130),High,Termination,Financial burden
+Data encrypted at rest. (variation 1131),Low,Privacy,Secure
+User activity tracked. (variation 1132),Medium,Privacy,Tracking concern
+Termination requires 60 days notice. (variation 1133),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 1134),High,Liability,Removes accountability
+User activity tracked. (variation 1135),Medium,Privacy,Tracking concern
+User activity tracked. (variation 1136),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 1137),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 1138),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 1139),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 1140),High,Termination,Financial burden
+Data anonymized. (variation 1141),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1142),High,Liability,Removes accountability
+Payment due within 30 days. (variation 1143),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1144),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 1145),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 1146),Medium,Termination,Lock-in risk
+Data anonymized. (variation 1147),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 1148),Low,Termination,Reasonable
+Company can terminate without notice. (variation 1149),High,Termination,Unfair
+Payment due within 30 days. (variation 1150),Low,Payment,Standard terms
+Data anonymized. (variation 1151),Low,Privacy,Privacy preserved
+Company may change pricing anytime. (variation 1152),High,Payment,Unpredictable costs
+User activity tracked. (variation 1153),Medium,Privacy,Tracking concern
+Data anonymized. (variation 1154),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 1155),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 1156),High,Liability,Removes accountability
+Payment due within 30 days. (variation 1157),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1158),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1159),High,Termination,Unfair
+Data anonymized. (variation 1160),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 1161),Medium,Termination,Lock-in risk
+Full liability accepted by vendor. (variation 1162),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 1163),Low,Privacy,Secure
+Contract auto-renews annually. (variation 1164),Medium,Termination,Lock-in risk
+Company may change pricing anytime. (variation 1165),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 1166),Low,Termination,Reasonable
+Termination penalty applies. (variation 1167),High,Termination,Financial burden
+Late fee of 5% per month. (variation 1168),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 1169),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 1170),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 1171),Medium,Payment,High penalty
+Company can terminate without notice. (variation 1172),High,Termination,Unfair
+Data encrypted at rest. (variation 1173),Low,Privacy,Secure
+Payment due within 30 days. (variation 1174),Low,Payment,Standard terms
+Termination requires 60 days notice. (variation 1175),Low,Termination,Reasonable
+Termination requires 60 days notice. (variation 1176),Low,Termination,Reasonable
+Contract auto-renews annually. (variation 1177),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 1178),High,Termination,Unfair
+Vendor is not liable for indirect damages. (variation 1179),High,Liability,Removes accountability
+Liability is capped at total fees paid. (variation 1180),High,Liability,Limits compensation
+Termination penalty applies. (variation 1181),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 1182),Low,Termination,Reasonable
+User activity tracked. (variation 1183),Medium,Privacy,Tracking concern
+Liability is capped at total fees paid. (variation 1184),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 1185),Medium,Payment,High penalty
+Termination requires 60 days notice. (variation 1186),Low,Termination,Reasonable
+Company can terminate without notice. (variation 1187),High,Termination,Unfair
+Payment due within 30 days. (variation 1188),Low,Payment,Standard terms
+Termination requires 60 days notice. (variation 1189),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 1190),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 1191),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 1192),Low,Liability,Favorable to client
+Company can terminate without notice. (variation 1193),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1194),High,Liability,Limits compensation
+Flexible payment options available. (variation 1195),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 1196),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 1197),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 1198),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 1199),High,Termination,Unfair
+Flexible payment options available. (variation 1200),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 1201),Low,Liability,Favorable to client
+Flexible payment options available. (variation 1202),Low,Payment,User-friendly
+Data anonymized. (variation 1203),Low,Privacy,Privacy preserved
+Liability is capped at total fees paid. (variation 1204),High,Liability,Limits compensation
+Payment due within 30 days. (variation 1205),Low,Payment,Standard terms
+Data anonymized. (variation 1206),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 1207),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 1208),High,Termination,Unfair
+Data encrypted at rest. (variation 1209),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 1210),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 1211),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 1212),Low,Payment,Standard terms
+Full liability accepted by vendor. (variation 1213),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 1214),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 1215),High,Payment,Unpredictable costs
+Vendor is not liable for indirect damages. (variation 1216),High,Liability,Removes accountability
+User activity tracked. (variation 1217),Medium,Privacy,Tracking concern
+Company may change pricing anytime. (variation 1218),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 1219),High,Termination,Unfair
+Contract auto-renews annually. (variation 1220),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1221),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1222),High,Liability,Limits compensation
+Termination penalty applies. (variation 1223),High,Termination,Financial burden
+Late fee of 5% per month. (variation 1224),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 1225),Medium,Payment,High penalty
+Data encrypted at rest. (variation 1226),Low,Privacy,Secure
+Data anonymized. (variation 1227),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 1228),Low,Liability,Favorable to client
+Flexible payment options available. (variation 1229),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 1230),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 1231),Low,Termination,Reasonable
+Flexible payment options available. (variation 1232),Low,Payment,User-friendly
+Data anonymized. (variation 1233),Low,Privacy,Privacy preserved
+Late fee of 5% per month. (variation 1234),Medium,Payment,High penalty
+Payment due within 30 days. (variation 1235),Low,Payment,Standard terms
+Flexible payment options available. (variation 1236),Low,Payment,User-friendly
+Termination requires 60 days notice. (variation 1237),Low,Termination,Reasonable
+Company can terminate without notice. (variation 1238),High,Termination,Unfair
+Vendor is not liable for indirect damages. (variation 1239),High,Liability,Removes accountability
+Data encrypted at rest. (variation 1240),Low,Privacy,Secure
+Payment due within 30 days. (variation 1241),Low,Payment,Standard terms
+Payment due within 30 days. (variation 1242),Low,Payment,Standard terms
+Termination requires 60 days notice. (variation 1243),Low,Termination,Reasonable
+Contract auto-renews annually. (variation 1244),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1245),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1246),High,Privacy,Privacy risk
+Full liability accepted by vendor. (variation 1247),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 1248),Low,Termination,Reasonable
+Data encrypted at rest. (variation 1249),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 1250),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 1251),Low,Termination,Reasonable
+Termination penalty applies. (variation 1252),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1253),Medium,Liability,Partial limitation
+Data encrypted at rest. (variation 1254),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 1255),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1256),High,Termination,Unfair
+User activity tracked. (variation 1257),Medium,Privacy,Tracking concern
+Vendor liable only for direct damages. (variation 1258),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 1259),Low,Liability,Favorable to client
+Payment due within 30 days. (variation 1260),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1261),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 1262),Medium,Payment,High penalty
+Client data shared with third parties. (variation 1263),High,Privacy,Privacy risk
+Termination penalty applies. (variation 1264),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 1265),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 1266),Low,Termination,Reasonable
+Company may change pricing anytime. (variation 1267),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 1268),Medium,Liability,Partial limitation
+Data anonymized. (variation 1269),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 1270),Low,Liability,Favorable to client
+Contract auto-renews annually. (variation 1271),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1272),Low,Payment,Standard terms
+Data anonymized. (variation 1273),Low,Privacy,Privacy preserved
+Liability is capped at total fees paid. (variation 1274),High,Liability,Limits compensation
+Contract auto-renews annually. (variation 1275),Medium,Termination,Lock-in risk
+Contract auto-renews annually. (variation 1276),Medium,Termination,Lock-in risk
+Data anonymized. (variation 1277),Low,Privacy,Privacy preserved
+Client data shared with third parties. (variation 1278),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 1279),Medium,Payment,High penalty
+Flexible payment options available. (variation 1280),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1281),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 1282),Medium,Payment,High penalty
+Client data shared with third parties. (variation 1283),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 1284),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1285),Low,Payment,Standard terms
+Payment due within 30 days. (variation 1286),Low,Payment,Standard terms
+Termination penalty applies. (variation 1287),High,Termination,Financial burden
+Vendor is not liable for indirect damages. (variation 1288),High,Liability,Removes accountability
+Payment due within 30 days. (variation 1289),Low,Payment,Standard terms
+User activity tracked. (variation 1290),Medium,Privacy,Tracking concern
+Vendor is not liable for indirect damages. (variation 1291),High,Liability,Removes accountability
+Termination penalty applies. (variation 1292),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 1293),Low,Termination,Reasonable
+Termination requires 60 days notice. (variation 1294),Low,Termination,Reasonable
+Data encrypted at rest. (variation 1295),Low,Privacy,Secure
+Contract auto-renews annually. (variation 1296),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 1297),High,Liability,Removes accountability
+Data encrypted at rest. (variation 1298),Low,Privacy,Secure
+Contract auto-renews annually. (variation 1299),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 1300),High,Privacy,Privacy risk
+Flexible payment options available. (variation 1301),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 1302),High,Payment,Unpredictable costs
+Vendor is not liable for indirect damages. (variation 1303),High,Liability,Removes accountability
+Vendor is not liable for indirect damages. (variation 1304),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 1305),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 1306),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 1307),High,Termination,Financial burden
+Company can terminate without notice. (variation 1308),High,Termination,Unfair
+Late fee of 5% per month. (variation 1309),Medium,Payment,High penalty
+Termination penalty applies. (variation 1310),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 1311),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 1312),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 1313),Low,Liability,Favorable to client
+Company can terminate without notice. (variation 1314),High,Termination,Unfair
+Data encrypted at rest. (variation 1315),Low,Privacy,Secure
+Company can terminate without notice. (variation 1316),High,Termination,Unfair
+Vendor liable only for direct damages. (variation 1317),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 1318),High,Termination,Unfair
+Company can terminate without notice. (variation 1319),High,Termination,Unfair
+Late fee of 5% per month. (variation 1320),Medium,Payment,High penalty
+Vendor is not liable for indirect damages. (variation 1321),High,Liability,Removes accountability
+Late fee of 5% per month. (variation 1322),Medium,Payment,High penalty
+Full liability accepted by vendor. (variation 1323),Low,Liability,Favorable to client
+Client data shared with third parties. (variation 1324),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 1325),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 1326),Low,Payment,Standard terms
+Data encrypted at rest. (variation 1327),Low,Privacy,Secure
+Company can terminate without notice. (variation 1328),High,Termination,Unfair
+Payment due within 30 days. (variation 1329),Low,Payment,Standard terms
+Termination penalty applies. (variation 1330),High,Termination,Financial burden
+Data anonymized. (variation 1331),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 1332),Low,Payment,Standard terms
+User activity tracked. (variation 1333),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1334),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 1335),Medium,Liability,Partial limitation
+Data encrypted at rest. (variation 1336),Low,Privacy,Secure
+Contract auto-renews annually. (variation 1337),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 1338),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1339),High,Payment,Unpredictable costs
+Termination requires 60 days notice. (variation 1340),Low,Termination,Reasonable
+Company may change pricing anytime. (variation 1341),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 1342),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1343),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1344),High,Termination,Unfair
+Client data shared with third parties. (variation 1345),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 1346),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 1347),High,Liability,Removes accountability
+User activity tracked. (variation 1348),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 1349),Low,Payment,Standard terms
+Company can terminate without notice. (variation 1350),High,Termination,Unfair
+User activity tracked. (variation 1351),Medium,Privacy,Tracking concern
+Vendor is not liable for indirect damages. (variation 1352),High,Liability,Removes accountability
+User activity tracked. (variation 1353),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1354),Low,Liability,Favorable to client
+User activity tracked. (variation 1355),Medium,Privacy,Tracking concern
+Flexible payment options available. (variation 1356),Low,Payment,User-friendly
+Termination penalty applies. (variation 1357),High,Termination,Financial burden
+Company can terminate without notice. (variation 1358),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1359),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 1360),High,Liability,Removes accountability
+Data encrypted at rest. (variation 1361),Low,Privacy,Secure
+Termination penalty applies. (variation 1362),High,Termination,Financial burden
+Data encrypted at rest. (variation 1363),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 1364),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 1365),Medium,Termination,Lock-in risk
+Contract auto-renews annually. (variation 1366),Medium,Termination,Lock-in risk
+User activity tracked. (variation 1367),Medium,Privacy,Tracking concern
+Termination requires 60 days notice. (variation 1368),Low,Termination,Reasonable
+Late fee of 5% per month. (variation 1369),Medium,Payment,High penalty
+Payment due within 30 days. (variation 1370),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1371),High,Liability,Limits compensation
+User activity tracked. (variation 1372),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1373),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 1374),Medium,Liability,Partial limitation
+Late fee of 5% per month. (variation 1375),Medium,Payment,High penalty
+Vendor is not liable for indirect damages. (variation 1376),High,Liability,Removes accountability
+User activity tracked. (variation 1377),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1378),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 1379),Low,Privacy,Secure
+Payment due within 30 days. (variation 1380),Low,Payment,Standard terms
+Contract auto-renews annually. (variation 1381),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 1382),High,Termination,Unfair
+Termination requires 60 days notice. (variation 1383),Low,Termination,Reasonable
+Data encrypted at rest. (variation 1384),Low,Privacy,Secure
+Vendor liable only for direct damages. (variation 1385),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1386),Low,Payment,User-friendly
+Liability is capped at total fees paid. (variation 1387),High,Liability,Limits compensation
+Data anonymized. (variation 1388),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1389),High,Liability,Removes accountability
+Data encrypted at rest. (variation 1390),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 1391),High,Liability,Limits compensation
+Data encrypted at rest. (variation 1392),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 1393),High,Liability,Limits compensation
+User activity tracked. (variation 1394),Medium,Privacy,Tracking concern
+Late fee of 5% per month. (variation 1395),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 1396),Medium,Payment,High penalty
+Vendor is not liable for indirect damages. (variation 1397),High,Liability,Removes accountability
+Data encrypted at rest. (variation 1398),Low,Privacy,Secure
+Termination requires 60 days notice. (variation 1399),Low,Termination,Reasonable
+Flexible payment options available. (variation 1400),Low,Payment,User-friendly
+Flexible payment options available. (variation 1401),Low,Payment,User-friendly
+User activity tracked. (variation 1402),Medium,Privacy,Tracking concern
+Client data shared with third parties. (variation 1403),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1404),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 1405),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 1406),Low,Payment,Standard terms
+Termination penalty applies. (variation 1407),High,Termination,Financial burden
+Termination requires 60 days notice. (variation 1408),Low,Termination,Reasonable
+User activity tracked. (variation 1409),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 1410),High,Termination,Financial burden
+Data anonymized. (variation 1411),Low,Privacy,Privacy preserved
+Liability is capped at total fees paid. (variation 1412),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 1413),High,Liability,Limits compensation
+Flexible payment options available. (variation 1414),Low,Payment,User-friendly
+Vendor is not liable for indirect damages. (variation 1415),High,Liability,Removes accountability
+Vendor is not liable for indirect damages. (variation 1416),High,Liability,Removes accountability
+Termination requires 60 days notice. (variation 1417),Low,Termination,Reasonable
+Late fee of 5% per month. (variation 1418),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 1419),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 1420),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 1421),High,Payment,Unpredictable costs
+Data encrypted at rest. (variation 1422),Low,Privacy,Secure
+Company can terminate without notice. (variation 1423),High,Termination,Unfair
+Termination penalty applies. (variation 1424),High,Termination,Financial burden
+Contract auto-renews annually. (variation 1425),Medium,Termination,Lock-in risk
+Data anonymized. (variation 1426),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 1427),Low,Termination,Reasonable
+Contract auto-renews annually. (variation 1428),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1429),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 1430),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 1431),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 1432),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 1433),Medium,Termination,Lock-in risk
+Data encrypted at rest. (variation 1434),Low,Privacy,Secure
+Flexible payment options available. (variation 1435),Low,Payment,User-friendly
+Flexible payment options available. (variation 1436),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 1437),Low,Liability,Favorable to client
+Liability is capped at total fees paid. (variation 1438),High,Liability,Limits compensation
+Flexible payment options available. (variation 1439),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 1440),Medium,Termination,Lock-in risk
+Termination penalty applies. (variation 1441),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1442),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 1443),High,Liability,Limits compensation
+Flexible payment options available. (variation 1444),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 1445),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 1446),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 1447),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 1448),Medium,Payment,High penalty
+Data anonymized. (variation 1449),Low,Privacy,Privacy preserved
+Client data shared with third parties. (variation 1450),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1451),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 1452),High,Liability,Limits compensation
+Termination penalty applies. (variation 1453),High,Termination,Financial burden
+Company can terminate without notice. (variation 1454),High,Termination,Unfair
+Payment due within 30 days. (variation 1455),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 1456),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 1457),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 1458),Medium,Payment,High penalty
+Data encrypted at rest. (variation 1459),Low,Privacy,Secure
+Termination requires 60 days notice. (variation 1460),Low,Termination,Reasonable
+Company can terminate without notice. (variation 1461),High,Termination,Unfair
+Payment due within 30 days. (variation 1462),Low,Payment,Standard terms
+Data anonymized. (variation 1463),Low,Privacy,Privacy preserved
+Termination penalty applies. (variation 1464),High,Termination,Financial burden
+Late fee of 5% per month. (variation 1465),Medium,Payment,High penalty
+Contract auto-renews annually. (variation 1466),Medium,Termination,Lock-in risk
+Data encrypted at rest. (variation 1467),Low,Privacy,Secure
+Company may change pricing anytime. (variation 1468),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 1469),Low,Payment,Standard terms
+Full liability accepted by vendor. (variation 1470),Low,Liability,Favorable to client
+Liability is capped at total fees paid. (variation 1471),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 1472),High,Liability,Removes accountability
+Flexible payment options available. (variation 1473),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 1474),Medium,Payment,High penalty
+Data encrypted at rest. (variation 1475),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 1476),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 1477),Medium,Liability,Partial limitation
+Termination requires 60 days notice. (variation 1478),Low,Termination,Reasonable
+Full liability accepted by vendor. (variation 1479),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 1480),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 1481),High,Termination,Unfair
+Company may change pricing anytime. (variation 1482),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 1483),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 1484),Low,Liability,Favorable to client
+Company can terminate without notice. (variation 1485),High,Termination,Unfair
+Company can terminate without notice. (variation 1486),High,Termination,Unfair
+Termination requires 60 days notice. (variation 1487),Low,Termination,Reasonable
+Vendor is not liable for indirect damages. (variation 1488),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 1489),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 1490),High,Payment,Unpredictable costs
+Vendor is not liable for indirect damages. (variation 1491),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 1492),Medium,Termination,Lock-in risk
+User activity tracked. (variation 1493),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1494),Low,Liability,Favorable to client
+Late fee of 5% per month. (variation 1495),Medium,Payment,High penalty
+Termination penalty applies. (variation 1496),High,Termination,Financial burden
+Company may change pricing anytime. (variation 1497),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 1498),High,Liability,Limits compensation
+User activity tracked. (variation 1499),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 1500),Low,Privacy,Secure
+Vendor is not liable for indirect damages. (variation 1501),High,Liability,Removes accountability
+Flexible payment options available. (variation 1502),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 1503),Medium,Payment,High penalty
+Termination penalty applies. (variation 1504),High,Termination,Financial burden
+Company can terminate without notice. (variation 1505),High,Termination,Unfair
+Full liability accepted by vendor. (variation 1506),Low,Liability,Favorable to client
+User activity tracked. (variation 1507),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 1508),Low,Privacy,Secure
+Company can terminate without notice. (variation 1509),High,Termination,Unfair
+User activity tracked. (variation 1510),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 1511),Low,Privacy,Secure
+Contract auto-renews annually. (variation 1512),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 1513),High,Liability,Limits compensation
+Full liability accepted by vendor. (variation 1514),Low,Liability,Favorable to client
+Full liability accepted by vendor. (variation 1515),Low,Liability,Favorable to client
+Client data shared with third parties. (variation 1516),High,Privacy,Privacy risk
+Liability is capped at total fees paid. (variation 1517),High,Liability,Limits compensation
+User activity tracked. (variation 1518),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1519),Low,Liability,Favorable to client
+Liability is capped at total fees paid. (variation 1520),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1521),High,Termination,Unfair
+Termination requires 60 days notice. (variation 1522),Low,Termination,Reasonable
+Liability is capped at total fees paid. (variation 1523),High,Liability,Limits compensation
+Data anonymized. (variation 1524),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 1525),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 1526),Medium,Payment,High penalty
+Data encrypted at rest. (variation 1527),Low,Privacy,Secure
+Contract auto-renews annually. (variation 1528),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1529),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 1530),Medium,Liability,Partial limitation
+Data encrypted at rest. (variation 1531),Low,Privacy,Secure
+Vendor is not liable for indirect damages. (variation 1532),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 1533),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 1534),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1535),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 1536),Medium,Termination,Lock-in risk
+Data encrypted at rest. (variation 1537),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 1538),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 1539),Low,Termination,Reasonable
+Data anonymized. (variation 1540),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 1541),Low,Termination,Reasonable
+Termination penalty applies. (variation 1542),High,Termination,Financial burden
+Contract auto-renews annually. (variation 1543),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 1544),High,Liability,Removes accountability
+Termination requires 60 days notice. (variation 1545),Low,Termination,Reasonable
+Termination penalty applies. (variation 1546),High,Termination,Financial burden
+Full liability accepted by vendor. (variation 1547),Low,Liability,Favorable to client
+Full liability accepted by vendor. (variation 1548),Low,Liability,Favorable to client
+Vendor liable only for direct damages. (variation 1549),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 1550),Low,Payment,Standard terms
+Payment due within 30 days. (variation 1551),Low,Payment,Standard terms
+Payment due within 30 days. (variation 1552),Low,Payment,Standard terms
+Data encrypted at rest. (variation 1553),Low,Privacy,Secure
+Company can terminate without notice. (variation 1554),High,Termination,Unfair
+Company can terminate without notice. (variation 1555),High,Termination,Unfair
+Company can terminate without notice. (variation 1556),High,Termination,Unfair
+User activity tracked. (variation 1557),Medium,Privacy,Tracking concern
+User activity tracked. (variation 1558),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 1559),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 1560),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 1561),Medium,Termination,Lock-in risk
+Company may change pricing anytime. (variation 1562),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 1563),Medium,Payment,High penalty
+Vendor liable only for direct damages. (variation 1564),Medium,Liability,Partial limitation
+Data anonymized. (variation 1565),Low,Privacy,Privacy preserved
+Data anonymized. (variation 1566),Low,Privacy,Privacy preserved
+Company may change pricing anytime. (variation 1567),High,Payment,Unpredictable costs
+Contract auto-renews annually. (variation 1568),Medium,Termination,Lock-in risk
+User activity tracked. (variation 1569),Medium,Privacy,Tracking concern
+Vendor liable only for direct damages. (variation 1570),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 1571),High,Liability,Removes accountability
+Data anonymized. (variation 1572),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 1573),Low,Liability,Favorable to client
+Company can terminate without notice. (variation 1574),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1575),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1576),High,Termination,Unfair
+Data anonymized. (variation 1577),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 1578),Low,Termination,Reasonable
+Company can terminate without notice. (variation 1579),High,Termination,Unfair
+Vendor is not liable for indirect damages. (variation 1580),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 1581),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 1582),Medium,Payment,High penalty
+Termination requires 60 days notice. (variation 1583),Low,Termination,Reasonable
+Termination requires 60 days notice. (variation 1584),Low,Termination,Reasonable
+Company may change pricing anytime. (variation 1585),High,Payment,Unpredictable costs
+Contract auto-renews annually. (variation 1586),Medium,Termination,Lock-in risk
+Data anonymized. (variation 1587),Low,Privacy,Privacy preserved
+Full liability accepted by vendor. (variation 1588),Low,Liability,Favorable to client
+Data encrypted at rest. (variation 1589),Low,Privacy,Secure
+Data anonymized. (variation 1590),Low,Privacy,Privacy preserved
+Data anonymized. (variation 1591),Low,Privacy,Privacy preserved
+Data anonymized. (variation 1592),Low,Privacy,Privacy preserved
+Liability is capped at total fees paid. (variation 1593),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 1594),High,Liability,Removes accountability
+Termination penalty applies. (variation 1595),High,Termination,Financial burden
+User activity tracked. (variation 1596),Medium,Privacy,Tracking concern
+Vendor is not liable for indirect damages. (variation 1597),High,Liability,Removes accountability
+Termination penalty applies. (variation 1598),High,Termination,Financial burden
+Payment due within 30 days. (variation 1599),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 1600),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 1601),Low,Liability,Favorable to client
+Vendor is not liable for indirect damages. (variation 1602),High,Liability,Removes accountability
+Termination penalty applies. (variation 1603),High,Termination,Financial burden
+Company may change pricing anytime. (variation 1604),High,Payment,Unpredictable costs
+Client data shared with third parties. (variation 1605),High,Privacy,Privacy risk
+User activity tracked. (variation 1606),Medium,Privacy,Tracking concern
+Data anonymized. (variation 1607),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1608),High,Liability,Removes accountability
+Payment due within 30 days. (variation 1609),Low,Payment,Standard terms
+User activity tracked. (variation 1610),Medium,Privacy,Tracking concern
+Data anonymized. (variation 1611),Low,Privacy,Privacy preserved
+User activity tracked. (variation 1612),Medium,Privacy,Tracking concern
+Vendor liable only for direct damages. (variation 1613),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 1614),High,Termination,Unfair
+Client data shared with third parties. (variation 1615),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1616),High,Payment,Unpredictable costs
+User activity tracked. (variation 1617),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 1618),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 1619),High,Privacy,Privacy risk
+Termination requires 60 days notice. (variation 1620),Low,Termination,Reasonable
+Contract auto-renews annually. (variation 1621),Medium,Termination,Lock-in risk
+User activity tracked. (variation 1622),Medium,Privacy,Tracking concern
+Liability is capped at total fees paid. (variation 1623),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 1624),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 1625),High,Termination,Financial burden
+Client data shared with third parties. (variation 1626),High,Privacy,Privacy risk
+Liability is capped at total fees paid. (variation 1627),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 1628),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 1629),High,Liability,Removes accountability
+Client data shared with third parties. (variation 1630),High,Privacy,Privacy risk
+Full liability accepted by vendor. (variation 1631),Low,Liability,Favorable to client
+Flexible payment options available. (variation 1632),Low,Payment,User-friendly
+Data anonymized. (variation 1633),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 1634),Medium,Liability,Partial limitation
+Payment due within 30 days. (variation 1635),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1636),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 1637),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1638),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1639),High,Termination,Unfair
+Termination penalty applies. (variation 1640),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1641),Medium,Liability,Partial limitation
+Late fee of 5% per month. (variation 1642),Medium,Payment,High penalty
+Company can terminate without notice. (variation 1643),High,Termination,Unfair
+Flexible payment options available. (variation 1644),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 1645),Medium,Payment,High penalty
+Termination requires 60 days notice. (variation 1646),Low,Termination,Reasonable
+Data encrypted at rest. (variation 1647),Low,Privacy,Secure
+User activity tracked. (variation 1648),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1649),Low,Liability,Favorable to client
+Contract auto-renews annually. (variation 1650),Medium,Termination,Lock-in risk
+Payment due within 30 days. (variation 1651),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 1652),High,Payment,Unpredictable costs
+Vendor liable only for direct damages. (variation 1653),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1654),Low,Payment,User-friendly
+Flexible payment options available. (variation 1655),Low,Payment,User-friendly
+Vendor liable only for direct damages. (variation 1656),Medium,Liability,Partial limitation
+Data anonymized. (variation 1657),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 1658),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1659),High,Privacy,Privacy risk
+Flexible payment options available. (variation 1660),Low,Payment,User-friendly
+Termination penalty applies. (variation 1661),High,Termination,Financial burden
+Termination penalty applies. (variation 1662),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1663),Medium,Liability,Partial limitation
+Company can terminate without notice. (variation 1664),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1665),High,Liability,Limits compensation
+Payment due within 30 days. (variation 1666),Low,Payment,Standard terms
+Company may change pricing anytime. (variation 1667),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 1668),Medium,Payment,High penalty
+Termination penalty applies. (variation 1669),High,Termination,Financial burden
+Company can terminate without notice. (variation 1670),High,Termination,Unfair
+Contract auto-renews annually. (variation 1671),Medium,Termination,Lock-in risk
+Vendor liable only for direct damages. (variation 1672),Medium,Liability,Partial limitation
+Client data shared with third parties. (variation 1673),High,Privacy,Privacy risk
+Company can terminate without notice. (variation 1674),High,Termination,Unfair
+Contract auto-renews annually. (variation 1675),Medium,Termination,Lock-in risk
+Flexible payment options available. (variation 1676),Low,Payment,User-friendly
+Data encrypted at rest. (variation 1677),Low,Privacy,Secure
+Vendor is not liable for indirect damages. (variation 1678),High,Liability,Removes accountability
+Flexible payment options available. (variation 1679),Low,Payment,User-friendly
+User activity tracked. (variation 1680),Medium,Privacy,Tracking concern
+Full liability accepted by vendor. (variation 1681),Low,Liability,Favorable to client
+Flexible payment options available. (variation 1682),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 1683),Low,Liability,Favorable to client
+Termination penalty applies. (variation 1684),High,Termination,Financial burden
+Company can terminate without notice. (variation 1685),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1686),High,Liability,Limits compensation
+Data anonymized. (variation 1687),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1688),High,Liability,Removes accountability
+Client data shared with third parties. (variation 1689),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 1690),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 1691),Medium,Termination,Lock-in risk
+Company can terminate without notice. (variation 1692),High,Termination,Unfair
+Payment due within 30 days. (variation 1693),Low,Payment,Standard terms
+Data anonymized. (variation 1694),Low,Privacy,Privacy preserved
+Client data shared with third parties. (variation 1695),High,Privacy,Privacy risk
+Payment due within 30 days. (variation 1696),Low,Payment,Standard terms
+Vendor is not liable for indirect damages. (variation 1697),High,Liability,Removes accountability
+Company can terminate without notice. (variation 1698),High,Termination,Unfair
+Contract auto-renews annually. (variation 1699),Medium,Termination,Lock-in risk
+Contract auto-renews annually. (variation 1700),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 1701),High,Liability,Limits compensation
+Company can terminate without notice. (variation 1702),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1703),High,Liability,Limits compensation
+Flexible payment options available. (variation 1704),Low,Payment,User-friendly
+User activity tracked. (variation 1705),Medium,Privacy,Tracking concern
+Liability is capped at total fees paid. (variation 1706),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 1707),High,Liability,Removes accountability
+Payment due within 30 days. (variation 1708),Low,Payment,Standard terms
+Flexible payment options available. (variation 1709),Low,Payment,User-friendly
+Company can terminate without notice. (variation 1710),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1711),High,Liability,Limits compensation
+Data encrypted at rest. (variation 1712),Low,Privacy,Secure
+Late fee of 5% per month. (variation 1713),Medium,Payment,High penalty
+Vendor liable only for direct damages. (variation 1714),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1715),Low,Payment,User-friendly
+Termination penalty applies. (variation 1716),High,Termination,Financial burden
+User activity tracked. (variation 1717),Medium,Privacy,Tracking concern
+Late fee of 5% per month. (variation 1718),Medium,Payment,High penalty
+Data anonymized. (variation 1719),Low,Privacy,Privacy preserved
+Data anonymized. (variation 1720),Low,Privacy,Privacy preserved
+Termination penalty applies. (variation 1721),High,Termination,Financial burden
+Vendor is not liable for indirect damages. (variation 1722),High,Liability,Removes accountability
+Data anonymized. (variation 1723),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 1724),Low,Termination,Reasonable
+Late fee of 5% per month. (variation 1725),Medium,Payment,High penalty
+Late fee of 5% per month. (variation 1726),Medium,Payment,High penalty
+Payment due within 30 days. (variation 1727),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 1728),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1729),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 1730),High,Payment,Unpredictable costs
+Vendor is not liable for indirect damages. (variation 1731),High,Liability,Removes accountability
+Termination penalty applies. (variation 1732),High,Termination,Financial burden
+Payment due within 30 days. (variation 1733),Low,Payment,Standard terms
+Flexible payment options available. (variation 1734),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1735),High,Privacy,Privacy risk
+Client data shared with third parties. (variation 1736),High,Privacy,Privacy risk
+Termination penalty applies. (variation 1737),High,Termination,Financial burden
+Data encrypted at rest. (variation 1738),Low,Privacy,Secure
+Liability is capped at total fees paid. (variation 1739),High,Liability,Limits compensation
+Vendor liable only for direct damages. (variation 1740),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 1741),Medium,Termination,Lock-in risk
+Vendor is not liable for indirect damages. (variation 1742),High,Liability,Removes accountability
+User activity tracked. (variation 1743),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 1744),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1745),High,Privacy,Privacy risk
+Vendor is not liable for indirect damages. (variation 1746),High,Liability,Removes accountability
+Payment due within 30 days. (variation 1747),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 1748),Medium,Payment,High penalty
+Vendor is not liable for indirect damages. (variation 1749),High,Liability,Removes accountability
+Vendor liable only for direct damages. (variation 1750),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 1751),High,Payment,Unpredictable costs
+Vendor is not liable for indirect damages. (variation 1752),High,Liability,Removes accountability
+Flexible payment options available. (variation 1753),Low,Payment,User-friendly
+Vendor is not liable for indirect damages. (variation 1754),High,Liability,Removes accountability
+Contract auto-renews annually. (variation 1755),Medium,Termination,Lock-in risk
+Data encrypted at rest. (variation 1756),Low,Privacy,Secure
+Company can terminate without notice. (variation 1757),High,Termination,Unfair
+Flexible payment options available. (variation 1758),Low,Payment,User-friendly
+Termination penalty applies. (variation 1759),High,Termination,Financial burden
+Liability is capped at total fees paid. (variation 1760),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 1761),High,Liability,Removes accountability
+Client data shared with third parties. (variation 1762),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1763),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 1764),High,Termination,Financial burden
+Late fee of 5% per month. (variation 1765),Medium,Payment,High penalty
+Flexible payment options available. (variation 1766),Low,Payment,User-friendly
+Flexible payment options available. (variation 1767),Low,Payment,User-friendly
+Termination requires 60 days notice. (variation 1768),Low,Termination,Reasonable
+Flexible payment options available. (variation 1769),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 1770),High,Payment,Unpredictable costs
+Data anonymized. (variation 1771),Low,Privacy,Privacy preserved
+Liability is capped at total fees paid. (variation 1772),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 1773),High,Liability,Limits compensation
+Vendor is not liable for indirect damages. (variation 1774),High,Liability,Removes accountability
+Full liability accepted by vendor. (variation 1775),Low,Liability,Favorable to client
+Liability is capped at total fees paid. (variation 1776),High,Liability,Limits compensation
+Client data shared with third parties. (variation 1777),High,Privacy,Privacy risk
+Data anonymized. (variation 1778),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1779),High,Liability,Removes accountability
+Company may change pricing anytime. (variation 1780),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 1781),High,Termination,Unfair
+Company may change pricing anytime. (variation 1782),High,Payment,Unpredictable costs
+Data encrypted at rest. (variation 1783),Low,Privacy,Secure
+Company may change pricing anytime. (variation 1784),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 1785),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1786),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 1787),High,Payment,Unpredictable costs
+Vendor is not liable for indirect damages. (variation 1788),High,Liability,Removes accountability
+Data encrypted at rest. (variation 1789),Low,Privacy,Secure
+Client data shared with third parties. (variation 1790),High,Privacy,Privacy risk
+Data encrypted at rest. (variation 1791),Low,Privacy,Secure
+Company may change pricing anytime. (variation 1792),High,Payment,Unpredictable costs
+Contract auto-renews annually. (variation 1793),Medium,Termination,Lock-in risk
+Data encrypted at rest. (variation 1794),Low,Privacy,Secure
+Client data shared with third parties. (variation 1795),High,Privacy,Privacy risk
+Flexible payment options available. (variation 1796),Low,Payment,User-friendly
+User activity tracked. (variation 1797),Medium,Privacy,Tracking concern
+Data anonymized. (variation 1798),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 1799),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 1800),High,Privacy,Privacy risk
+Company may change pricing anytime. (variation 1801),High,Payment,Unpredictable costs
+Full liability accepted by vendor. (variation 1802),Low,Liability,Favorable to client
+User activity tracked. (variation 1803),Medium,Privacy,Tracking concern
+Data anonymized. (variation 1804),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1805),High,Liability,Removes accountability
+Flexible payment options available. (variation 1806),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 1807),Medium,Payment,High penalty
+Full liability accepted by vendor. (variation 1808),Low,Liability,Favorable to client
+Termination penalty applies. (variation 1809),High,Termination,Financial burden
+Late fee of 5% per month. (variation 1810),Medium,Payment,High penalty
+User activity tracked. (variation 1811),Medium,Privacy,Tracking concern
+Data encrypted at rest. (variation 1812),Low,Privacy,Secure
+Late fee of 5% per month. (variation 1813),Medium,Payment,High penalty
+Data encrypted at rest. (variation 1814),Low,Privacy,Secure
+Company can terminate without notice. (variation 1815),High,Termination,Unfair
+Late fee of 5% per month. (variation 1816),Medium,Payment,High penalty
+User activity tracked. (variation 1817),Medium,Privacy,Tracking concern
+Company can terminate without notice. (variation 1818),High,Termination,Unfair
+Payment due within 30 days. (variation 1819),Low,Payment,Standard terms
+Data anonymized. (variation 1820),Low,Privacy,Privacy preserved
+User activity tracked. (variation 1821),Medium,Privacy,Tracking concern
+Termination penalty applies. (variation 1822),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1823),Medium,Liability,Partial limitation
+User activity tracked. (variation 1824),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 1825),Low,Payment,Standard terms
+Company can terminate without notice. (variation 1826),High,Termination,Unfair
+Full liability accepted by vendor. (variation 1827),Low,Liability,Favorable to client
+Data anonymized. (variation 1828),Low,Privacy,Privacy preserved
+User activity tracked. (variation 1829),Medium,Privacy,Tracking concern
+Flexible payment options available. (variation 1830),Low,Payment,User-friendly
+Flexible payment options available. (variation 1831),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1832),High,Privacy,Privacy risk
+Contract auto-renews annually. (variation 1833),Medium,Termination,Lock-in risk
+Data anonymized. (variation 1834),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 1835),Low,Payment,Standard terms
+Payment due within 30 days. (variation 1836),Low,Payment,Standard terms
+Company can terminate without notice. (variation 1837),High,Termination,Unfair
+User activity tracked. (variation 1838),Medium,Privacy,Tracking concern
+Payment due within 30 days. (variation 1839),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 1840),Medium,Payment,High penalty
+Data anonymized. (variation 1841),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1842),High,Liability,Removes accountability
+Flexible payment options available. (variation 1843),Low,Payment,User-friendly
+Payment due within 30 days. (variation 1844),Low,Payment,Standard terms
+Termination penalty applies. (variation 1845),High,Termination,Financial burden
+Data encrypted at rest. (variation 1846),Low,Privacy,Secure
+Data encrypted at rest. (variation 1847),Low,Privacy,Secure
+User activity tracked. (variation 1848),Medium,Privacy,Tracking concern
+Client data shared with third parties. (variation 1849),High,Privacy,Privacy risk
+Termination penalty applies. (variation 1850),High,Termination,Financial burden
+Company may change pricing anytime. (variation 1851),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 1852),High,Liability,Limits compensation
+Termination penalty applies. (variation 1853),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1854),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 1855),High,Liability,Removes accountability
+Flexible payment options available. (variation 1856),Low,Payment,User-friendly
+Data encrypted at rest. (variation 1857),Low,Privacy,Secure
+Vendor is not liable for indirect damages. (variation 1858),High,Liability,Removes accountability
+Flexible payment options available. (variation 1859),Low,Payment,User-friendly
+Termination requires 60 days notice. (variation 1860),Low,Termination,Reasonable
+Data anonymized. (variation 1861),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 1862),Medium,Liability,Partial limitation
+Liability is capped at total fees paid. (variation 1863),High,Liability,Limits compensation
+Termination penalty applies. (variation 1864),High,Termination,Financial burden
+Contract auto-renews annually. (variation 1865),Medium,Termination,Lock-in risk
+Flexible payment options available. (variation 1866),Low,Payment,User-friendly
+Vendor is not liable for indirect damages. (variation 1867),High,Liability,Removes accountability
+Company can terminate without notice. (variation 1868),High,Termination,Unfair
+Flexible payment options available. (variation 1869),Low,Payment,User-friendly
+Payment due within 30 days. (variation 1870),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1871),High,Liability,Limits compensation
+Payment due within 30 days. (variation 1872),Low,Payment,Standard terms
+Termination penalty applies. (variation 1873),High,Termination,Financial burden
+Flexible payment options available. (variation 1874),Low,Payment,User-friendly
+Late fee of 5% per month. (variation 1875),Medium,Payment,High penalty
+Data anonymized. (variation 1876),Low,Privacy,Privacy preserved
+User activity tracked. (variation 1877),Medium,Privacy,Tracking concern
+Late fee of 5% per month. (variation 1878),Medium,Payment,High penalty
+Liability is capped at total fees paid. (variation 1879),High,Liability,Limits compensation
+Termination penalty applies. (variation 1880),High,Termination,Financial burden
+Data anonymized. (variation 1881),Low,Privacy,Privacy preserved
+Company may change pricing anytime. (variation 1882),High,Payment,Unpredictable costs
+Liability is capped at total fees paid. (variation 1883),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 1884),Low,Termination,Reasonable
+Data encrypted at rest. (variation 1885),Low,Privacy,Secure
+Company may change pricing anytime. (variation 1886),High,Payment,Unpredictable costs
+Full liability accepted by vendor. (variation 1887),Low,Liability,Favorable to client
+Company may change pricing anytime. (variation 1888),High,Payment,Unpredictable costs
+Late fee of 5% per month. (variation 1889),Medium,Payment,High penalty
+Company may change pricing anytime. (variation 1890),High,Payment,Unpredictable costs
+Termination penalty applies. (variation 1891),High,Termination,Financial burden
+Company can terminate without notice. (variation 1892),High,Termination,Unfair
+Full liability accepted by vendor. (variation 1893),Low,Liability,Favorable to client
+Company can terminate without notice. (variation 1894),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1895),High,Liability,Limits compensation
+Company may change pricing anytime. (variation 1896),High,Payment,Unpredictable costs
+Data anonymized. (variation 1897),Low,Privacy,Privacy preserved
+Company can terminate without notice. (variation 1898),High,Termination,Unfair
+Company may change pricing anytime. (variation 1899),High,Payment,Unpredictable costs
+Data encrypted at rest. (variation 1900),Low,Privacy,Secure
+Payment due within 30 days. (variation 1901),Low,Payment,Standard terms
+Payment due within 30 days. (variation 1902),Low,Payment,Standard terms
+Liability is capped at total fees paid. (variation 1903),High,Liability,Limits compensation
+Payment due within 30 days. (variation 1904),Low,Payment,Standard terms
+Client data shared with third parties. (variation 1905),High,Privacy,Privacy risk
+Vendor is not liable for indirect damages. (variation 1906),High,Liability,Removes accountability
+Late fee of 5% per month. (variation 1907),Medium,Payment,High penalty
+Data anonymized. (variation 1908),Low,Privacy,Privacy preserved
+Late fee of 5% per month. (variation 1909),Medium,Payment,High penalty
+Vendor liable only for direct damages. (variation 1910),Medium,Liability,Partial limitation
+Vendor liable only for direct damages. (variation 1911),Medium,Liability,Partial limitation
+Contract auto-renews annually. (variation 1912),Medium,Termination,Lock-in risk
+Flexible payment options available. (variation 1913),Low,Payment,User-friendly
+Flexible payment options available. (variation 1914),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1915),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 1916),Medium,Payment,High penalty
+Data anonymized. (variation 1917),Low,Privacy,Privacy preserved
+Company can terminate without notice. (variation 1918),High,Termination,Unfair
+Termination penalty applies. (variation 1919),High,Termination,Financial burden
+Flexible payment options available. (variation 1920),Low,Payment,User-friendly
+Vendor liable only for direct damages. (variation 1921),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1922),Low,Payment,User-friendly
+Company can terminate without notice. (variation 1923),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1924),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 1925),High,Liability,Limits compensation
+Data anonymized. (variation 1926),Low,Privacy,Privacy preserved
+Termination requires 60 days notice. (variation 1927),Low,Termination,Reasonable
+User activity tracked. (variation 1928),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 1929),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 1930),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 1931),High,Liability,Limits compensation
+Liability is capped at total fees paid. (variation 1932),High,Liability,Limits compensation
+Termination requires 60 days notice. (variation 1933),Low,Termination,Reasonable
+Flexible payment options available. (variation 1934),Low,Payment,User-friendly
+Company may change pricing anytime. (variation 1935),High,Payment,Unpredictable costs
+Company may change pricing anytime. (variation 1936),High,Payment,Unpredictable costs
+Company can terminate without notice. (variation 1937),High,Termination,Unfair
+Client data shared with third parties. (variation 1938),High,Privacy,Privacy risk
+Flexible payment options available. (variation 1939),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 1940),Low,Liability,Favorable to client
+User activity tracked. (variation 1941),Medium,Privacy,Tracking concern
+Contract auto-renews annually. (variation 1942),Medium,Termination,Lock-in risk
+Client data shared with third parties. (variation 1943),High,Privacy,Privacy risk
+Late fee of 5% per month. (variation 1944),Medium,Payment,High penalty
+Company can terminate without notice. (variation 1945),High,Termination,Unfair
+Liability is capped at total fees paid. (variation 1946),High,Liability,Limits compensation
+Late fee of 5% per month. (variation 1947),Medium,Payment,High penalty
+Payment due within 30 days. (variation 1948),Low,Payment,Standard terms
+Full liability accepted by vendor. (variation 1949),Low,Liability,Favorable to client
+Termination penalty applies. (variation 1950),High,Termination,Financial burden
+Termination penalty applies. (variation 1951),High,Termination,Financial burden
+Company can terminate without notice. (variation 1952),High,Termination,Unfair
+Vendor liable only for direct damages. (variation 1953),Medium,Liability,Partial limitation
+Company may change pricing anytime. (variation 1954),High,Payment,Unpredictable costs
+Payment due within 30 days. (variation 1955),Low,Payment,Standard terms
+Data anonymized. (variation 1956),Low,Privacy,Privacy preserved
+Vendor is not liable for indirect damages. (variation 1957),High,Liability,Removes accountability
+Vendor liable only for direct damages. (variation 1958),Medium,Liability,Partial limitation
+Client data shared with third parties. (variation 1959),High,Privacy,Privacy risk
+Vendor liable only for direct damages. (variation 1960),Medium,Liability,Partial limitation
+Flexible payment options available. (variation 1961),Low,Payment,User-friendly
+Contract auto-renews annually. (variation 1962),Medium,Termination,Lock-in risk
+Data anonymized. (variation 1963),Low,Privacy,Privacy preserved
+Payment due within 30 days. (variation 1964),Low,Payment,Standard terms
+Vendor liable only for direct damages. (variation 1965),Medium,Liability,Partial limitation
+Vendor is not liable for indirect damages. (variation 1966),High,Liability,Removes accountability
+Termination penalty applies. (variation 1967),High,Termination,Financial burden
+Vendor liable only for direct damages. (variation 1968),Medium,Liability,Partial limitation
+Late fee of 5% per month. (variation 1969),Medium,Payment,High penalty
+User activity tracked. (variation 1970),Medium,Privacy,Tracking concern
+Late fee of 5% per month. (variation 1971),Medium,Payment,High penalty
+Data anonymized. (variation 1972),Low,Privacy,Privacy preserved
+Vendor liable only for direct damages. (variation 1973),Medium,Liability,Partial limitation
+Full liability accepted by vendor. (variation 1974),Low,Liability,Favorable to client
+Termination requires 60 days notice. (variation 1975),Low,Termination,Reasonable
+Termination penalty applies. (variation 1976),High,Termination,Financial burden
+Full liability accepted by vendor. (variation 1977),Low,Liability,Favorable to client
+Data anonymized. (variation 1978),Low,Privacy,Privacy preserved
+Contract auto-renews annually. (variation 1979),Medium,Termination,Lock-in risk
+Data anonymized. (variation 1980),Low,Privacy,Privacy preserved
+Data anonymized. (variation 1981),Low,Privacy,Privacy preserved
+Client data shared with third parties. (variation 1982),High,Privacy,Privacy risk
+Flexible payment options available. (variation 1983),Low,Payment,User-friendly
+Full liability accepted by vendor. (variation 1984),Low,Liability,Favorable to client
+Client data shared with third parties. (variation 1985),High,Privacy,Privacy risk
+User activity tracked. (variation 1986),Medium,Privacy,Tracking concern
+Client data shared with third parties. (variation 1987),High,Privacy,Privacy risk
+Payment due within 30 days. (variation 1988),Low,Payment,Standard terms
+Termination requires 60 days notice. (variation 1989),Low,Termination,Reasonable
+Contract auto-renews annually. (variation 1990),Medium,Termination,Lock-in risk
+Liability is capped at total fees paid. (variation 1991),High,Liability,Limits compensation
+Flexible payment options available. (variation 1992),Low,Payment,User-friendly
+Client data shared with third parties. (variation 1993),High,Privacy,Privacy risk
+Flexible payment options available. (variation 1994),Low,Payment,User-friendly
+Company can terminate without notice. (variation 1995),High,Termination,Unfair
+Payment due within 30 days. (variation 1996),Low,Payment,Standard terms
+Late fee of 5% per month. (variation 1997),Medium,Payment,High penalty
+Termination penalty applies. (variation 1998),High,Termination,Financial burden
+Data encrypted at rest. (variation 1999),Low,Privacy,Secure
