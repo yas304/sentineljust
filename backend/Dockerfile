@@ -27,6 +27,10 @@ RUN python -m spacy download en_core_web_sm
 # Copy application code
 COPY app/ ./app/
 
+# Copy startup script
+COPY start.sh .
+RUN chmod +x start.sh
+
 # Create necessary directories
 RUN mkdir -p /app/uploads /app/cache /app/data
 
@@ -34,4 +38,4 @@ RUN mkdir -p /app/uploads /app/cache /app/data
 EXPOSE 8000
 
 # Run the application
-CMD ["sh", "-c", "python -m uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["./start.sh"]
