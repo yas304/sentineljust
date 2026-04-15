@@ -3395,3 +3395,202 @@ body {
     min-width: 150px;
     margin-top: 0;
 }
+
+/* ========================================
+   TOAST NOTIFICATIONS
+   ======================================== */
+
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), var(--glow-blue);
+    z-index: 10000;
+    transform: translateX(120%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 400px;
+}
+
+.toast-notification.show {
+    transform: translateX(0);
+}
+
+.toast-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.toast-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast);
+}
+
+.toast-close:hover {
+    color: var(--text-primary);
+}
+
+.toast-success {
+    border-color: var(--success);
+}
+
+.toast-success .toast-icon {
+    color: var(--success);
+}
+
+.toast-error {
+    border-color: var(--danger);
+}
+
+.toast-error .toast-icon {
+    color: var(--danger);
+}
+
+.toast-warning {
+    border-color: var(--warning);
+}
+
+.toast-warning .toast-icon {
+    color: var(--warning);
+}
+
+.toast-info {
+    border-color: var(--blue-400);
+}
+
+.toast-info .toast-icon {
+    color: var(--blue-400);
+}
+
+/* ========================================
+   KEYBOARD SHORTCUTS MODAL
+   ======================================== */
+
+.keyboard-shortcuts-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard-shortcuts-modal.show {
+    display: flex;
+}
+
+.shortcuts-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.shortcuts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.shortcuts-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.shortcuts-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.shortcuts-close:hover {
+    color: var(--text-primary);
+}
+
+.shortcut-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.shortcut-item:last-child {
+    border-bottom: none;
+}
+
+.shortcut-action {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.shortcut-keys {
+    display: flex;
+    gap: 6px;
+}
+
+.shortcut-key {
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 12px;
+    color: var(--text-primary);
+}
+
+/* ========================================
+   HOVER EFFECTS FOR NAV BRAND
+   ======================================== */
+
+.app-nav-brand:hover {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+.app-nav-brand {
+    transition: all var(--transition-fast);
+}

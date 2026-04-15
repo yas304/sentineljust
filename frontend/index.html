@@ -357,6 +357,58 @@
             if (settings) settings.classList.toggle('hidden', view !== 'settings');
         }
         
+        // Go to homepage (landing page)
+        function goToHomepage() {
+            var dropdown = document.getElementById('user-dropdown');
+            if (dropdown) dropdown.classList.add('hidden');
+            
+            // Hide app container
+            var appContainer = document.getElementById('app-container');
+            if (appContainer) appContainer.classList.add('hidden');
+            
+            // Show landing page
+            var landingPage = document.getElementById('landing');
+            if (landingPage) landingPage.classList.remove('hidden');
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            showToast('Viewing homepage', 'info');
+        }
+        
+        // Toast notification system
+        function showToast(message, type) {
+            type = type || 'info';
+            
+            // Remove existing toasts
+            var existingToasts = document.querySelectorAll('.toast-notification');
+            existingToasts.forEach(function(t) { t.remove(); });
+            
+            // Create toast
+            var toast = document.createElement('div');
+            toast.className = 'toast-notification toast-' + type;
+            
+            var icons = {
+                success: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>',
+                error: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+                warning: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+                info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+            };
+            
+            toast.innerHTML = '<div class="toast-icon">' + (icons[type] || icons.info) + '</div><div class="toast-message">' + message + '</div><button class="toast-close" onclick="this.parentElement.remove()">&times;</button>';
+            
+            document.body.appendChild(toast);
+            
+            // Animate in
+            setTimeout(function() { toast.classList.add('show'); }, 10);
+            
+            // Auto remove
+            setTimeout(function() {
+                toast.classList.remove('show');
+                setTimeout(function() { toast.remove(); }, 300);
+            }, 4000);
+        }
+        
         // File upload handling
         function handleFileSelect(input) {
             if (input.files && input.files.length > 0) {
@@ -1351,7 +1403,79 @@
             if (timelineFilter) {
                 timelineFilter.onchange = createRiskTrendChart;
             }
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Don't trigger shortcuts when typing in inputs
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+                
+                // ? - Show shortcuts help
+                if (e.key === '?' && !e.ctrlKey && !e.metaKey) {
+                    showShortcutsModal();
+                    return;
+                }
+                
+                // Escape - Close modals/dropdowns
+                if (e.key === 'Escape') {
+                    hideShortcutsModal();
+                    var dropdown = document.getElementById('user-dropdown');
+                    if (dropdown) dropdown.classList.add('hidden');
+                    return;
+                }
+                
+                // Only handle shortcuts if app is visible
+                var appContainer = document.getElementById('app-container');
+                if (!appContainer || appContainer.classList.contains('hidden')) return;
+                
+                // G then H - Go Home
+                if (e.key.toLowerCase() === 'h' && !e.ctrlKey && !e.metaKey) {
+                    goToHomepage();
+                    return;
+                }
+                
+                // G then D - Go to Dashboard
+                if (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.metaKey) {
+                    switchView('dashboard');
+                    showToast('Switched to Dashboard', 'info');
+                    return;
+                }
+                
+                // G then I - Go to History  
+                if (e.key.toLowerCase() === 'i' && !e.ctrlKey && !e.metaKey) {
+                    switchView('history');
+                    showToast('Switched to History', 'info');
+                    return;
+                }
+                
+                // G then S - Go to Settings
+                if (e.key.toLowerCase() === 's' && !e.ctrlKey && !e.metaKey) {
+                    switchView('settings');
+                    showToast('Switched to Settings', 'info');
+                    return;
+                }
+                
+                // U - Upload (focus upload area)
+                if (e.key.toLowerCase() === 'u' && !e.ctrlKey && !e.metaKey) {
+                    var uploadInput = document.getElementById('file-upload');
+                    if (uploadInput) {
+                        uploadInput.click();
+                        showToast('Choose a file to upload', 'info');
+                    }
+                    return;
+                }
+            });
         });
+        
+        // Shortcuts modal functions
+        function showShortcutsModal() {
+            var modal = document.getElementById('shortcuts-modal');
+            if (modal) modal.classList.add('show');
+        }
+        
+        function hideShortcutsModal() {
+            var modal = document.getElementById('shortcuts-modal');
+            if (modal) modal.classList.remove('show');
+        }
     </script>
 
     <!-- Auth Modal -->
@@ -1742,7 +1866,7 @@
     <section id="app-container" class="hidden">
         <!-- App Navigation -->
         <nav class="app-nav">
-            <div class="app-nav-brand">
+            <div class="app-nav-brand" onclick="goToHomepage()" style="cursor: pointer;" title="Go to Homepage">
                 <svg viewBox="0 0 40 40" fill="none">
                     <circle cx="20" cy="20" r="18" stroke="url(#app-nav-grad)" stroke-width="2"/>
                     <circle cx="20" cy="22" r="6" fill="url(#app-nav-grad)"/>
@@ -1751,6 +1875,10 @@
                 <span>Sentinel Core</span>
             </div>
             <div class="app-nav-links">
+                <button class="app-nav-link" onclick="goToHomepage()" title="Home">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+                    <span>Home</span>
+                </button>
                 <button class="app-nav-link active" data-view="dashboard" onclick="switchView('dashboard')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                     <span>Dashboard</span>
@@ -1772,6 +1900,7 @@
                         <span class="user-email" id="dropdown-user-email">user@example.com</span>
                     </div>
                     <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" onclick="goToHomepage()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>Homepage</span></button>
                     <button class="dropdown-item" id="dropdown-settings" onclick="switchView('settings')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></button>
                     <button class="dropdown-item danger" id="logout-btn" onclick="handleLogout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg><span>Sign Out</span></button>
                 </div>
@@ -2165,6 +2294,44 @@
             <button class="modal-close" id="modal-close" onclick="hideClauseModal()">&times;</button>
             <div class="modal-header"><span class="modal-badge" id="modal-badge">Clause</span><h2 id="modal-title">Clause Details</h2></div>
             <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcuts-modal" class="keyboard-shortcuts-modal" onclick="if(event.target===this)hideShortcutsModal()">
+        <div class="shortcuts-content">
+            <div class="shortcuts-header">
+                <h3>⌨️ Keyboard Shortcuts</h3>
+                <button class="shortcuts-close" onclick="hideShortcutsModal()">&times;</button>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-action">Show this help</span>
+                <div class="shortcut-keys"><span class="shortcut-key">?</span></div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-action">Go to Homepage</span>
+                <div class="shortcut-keys"><span class="shortcut-key">H</span></div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-action">Go to Dashboard</span>
+                <div class="shortcut-keys"><span class="shortcut-key">D</span></div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-action">Go to History</span>
+                <div class="shortcut-keys"><span class="shortcut-key">I</span></div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-action">Go to Settings</span>
+                <div class="shortcut-keys"><span class="shortcut-key">S</span></div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-action">Upload File</span>
+                <div class="shortcut-keys"><span class="shortcut-key">U</span></div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-action">Close Modal</span>
+                <div class="shortcut-keys"><span class="shortcut-key">Esc</span></div>
+            </div>
         </div>
     </div>
 
